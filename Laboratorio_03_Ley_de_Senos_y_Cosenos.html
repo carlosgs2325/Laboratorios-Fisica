@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Ley de Senos y Cosenos | Física Unidad 2</title><style>
+:root{--bg:#f3f6fb;--ink:#13233d;--muted:#52647d;--line:#dce4ef;--blue:#265fd2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+.shell{max-width:1190px;margin:auto;padding:24px 20px 32px}.top{display:flex;justify-content:space-between;gap:14px;align-items:start;flex-wrap:wrap;margin-bottom:20px}.eyebrow{letter-spacing:.12em;color:#315b9e;text-transform:uppercase;font-size:.75rem;font-weight:800}.shell h1{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.2;margin:6px 0 0}.pill{border-radius:30px;padding:7px 13px;color:#2456ab;background:#e6effe;font-size:.8rem;font-weight:750}.tabbar{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid #cdd8e6;margin-bottom:15px;padding-bottom:12px}.tabbar button{font:inherit;font-size:.95rem;color:var(--ink);background:white;border:1px solid #cbd7e7;padding:12px 18px;border-radius:11px;cursor:pointer;min-height:45px;font-weight:750}.tabbar button[aria-selected=true]{background:#265fd2;border-color:#265fd2;color:white}.tabbar button:focus-visible{outline:3px solid #92baff;outline-offset:3px}.tabPanel[hidden]{display:none}.labframe{width:100%;min-height:660px;border:0;display:block;background:transparent;overflow:hidden}.hint{font-size:.82rem;color:var(--muted);margin:0 0 13px}.back{display:inline-flex;margin-top:13px;color:#2654b6;text-decoration:none;font-size:.9rem;font-weight:650}@media(max-width:640px){.shell{padding:18px 10px 28px}.tabbar button{flex:1;padding:11px 7px;font-size:.87rem}}
+</style><style>body{background:#f5f7fb} .shell{max-width:1270px} .tabbar{box-shadow:0 3px 12px rgba(30,53,90,.05)} .tabbar button{font-weight:750} .labframe{background:#f5f7fb;border-radius:0 0 16px 16px}</style><style>
+.shell{padding:16px 14px 20px}
+.top{margin-bottom:11px}
+.tabbar{margin-bottom:7px;padding-bottom:8px}
+.labframe{min-height:0;height:480px;border-radius:0}
+.tabPanel{min-height:0}
+.back{margin-top:8px}
+@media(max-width:640px){.shell{padding:11px 7px 15px}.top{margin-bottom:9px}}
+</style><style>
+:root{--bg:#081120;--ink:#e8f1ff;--muted:#a9c2da;--line:#2c4660;--blue:#59d7ec}
+*{box-sizing:border-box}html,body{background:#081120!important;color:#e8f1ff!important}body{background:radial-gradient(circle at 85% 3%,#143456 0,transparent 36%),#081120!important;color:#e8f1ff!important}
+.shell{max-width:1450px!important;padding:22px 3vw 36px!important}
+.top{background:transparent!important;border-bottom:1px solid #294460!important;padding:5px 0 18px!important;margin-bottom:18px!important;align-items:center!important}
+.top .eyebrow{color:#79dfe8!important;font-size:11px!important;letter-spacing:2px!important}.shell h1{color:#f0f7ff!important;font-size:clamp(23px,3vw,35px)!important;letter-spacing:-.6px!important}
+.tabbar{display:flex!important;gap:12px!important;flex-wrap:wrap!important;margin:0 0 14px!important;padding:9px!important;background:#10233b!important;border:1px solid #2a4663!important;border-radius:15px!important;box-shadow:none!important}
+.tabbar button{background:#1b314c!important;color:#c9dfef!important;border:1px solid #345372!important;border-radius:10px!important;font-size:13px!important;padding:11px 17px!important}
+.tabbar button[aria-selected=true]{background:#176c7a!important;border-color:#59d7eb!important;color:white!important}
+.hint{color:#a6c3d8!important;margin:0 0 13px!important}
+.labframe{background:#0b182a!important;border:1px solid #29425b!important;border-radius:18px!important;min-height:480px}
+.tabPanel{min-width:0!important}.tabPanel[hidden]{display:none!important}
+.pie-navegacion{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-top:18px}.back{display:inline-flex;align-items:center;margin:0!important;text-decoration:none;background:#15304c!important;color:#e4f3ff!important;border:1px solid #355a7a!important;border-radius:11px;padding:11px 15px;font-weight:800!important;font-size:13px!important}
+.back:hover{background:#254560!important}.credito-autoria{margin-left:auto;color:#a4bfd5;font-size:11px;font-weight:600;text-align:right}
+@media(max-width:650px){.shell{padding:13px 10px 24px!important}.tabbar button{flex:1}.pie-navegacion{justify-content:center}.credito-autoria{margin:0;width:100%;text-align:center;font-size:10px}}
+</style></head><body><main class="shell"><header class="top"><div><div class="eyebrow">Laboratorio virtual de física · Unidad 2</div><h1>Ley de Senos y Cosenos</h1></div></header><nav aria-label="Temas del laboratorio" class="tabbar" role="tablist"><button aria-controls="tab-panel-0" aria-selected="true" id="tab-0" role="tab" tabindex="0" type="button">Ley de Senos</button><button aria-controls="tab-panel-1" aria-selected="false" id="tab-1" role="tab" tabindex="-1" type="button">Ley de Cosenos</button></nav><section aria-labelledby="tab-0" class="tabPanel" id="tab-panel-0" role="tabpanel"><iframe class="labframe" sandbox="allow-scripts" scrolling="no" srcdoc="&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;es&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;/&gt;&lt;meta content=&quot;width=device-width,initial-scale=1&quot; name=&quot;viewport&quot;/&gt;&lt;title&gt;Laboratorio 05 | Ley de senos&lt;/title&gt;&lt;style&gt;
+:root{--bg:#f3f6fb;--white:#fff;--ink:#13233d;--muted:#52647d;--line:#dce4ef;--blue:#265fd2;--cyan:#087e91;--orange:#ad5c18;--shadow:0 10px 30px rgba(20,40,78,.06)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,&#x27;Segoe UI&#x27;,Arial,sans-serif;line-height:1.5}button,input{font:inherit}button:focus-visible,input:focus-visible,[role=slider]:focus-visible{outline:3px solid #85b4fd;outline-offset:3px}.wrap{max-width:1190px;margin:auto;padding:27px 20px 45px}.eyebrow{letter-spacing:.13em;font-size:.76rem;font-weight:800;color:#315b9e;text-transform:uppercase}.header{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:20px;flex-wrap:wrap}h1{font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.18;margin:5px 0}h2{font-size:1.06rem;margin:0 0 6px}.subtitle{color:var(--muted);margin:0;max-width:780px}.pill{background:#e6effe;color:#2456ab;border-radius:30px;padding:7px 12px;font-size:.79rem;font-weight:800}.grid{display:grid;grid-template-columns:minmax(0,1.38fr) minmax(300px,1fr);gap:17px}.panel{background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:20px;min-width:0}.muted{color:var(--muted)}.small{font-size:.86rem}.scene{background:linear-gradient(180deg,#fbfdff,#edf4ff);border:1px solid #e1eaf8;border-radius:15px;padding:7px;margin:14px 0 0}.scene svg{display:block;width:100%;height:auto;touch-action:pan-y}.triangle{fill:rgba(38,95,210,.06);stroke:var(--blue);stroke-width:3.5;stroke-linejoin:round}.construction{stroke:#b1c2dd;stroke-dasharray:5 6;stroke-width:1.5}.handle{fill:white;stroke:var(--blue);stroke-width:4;cursor:grab}.handle:active{cursor:grabbing}.sideLabel{font:700 13px system-ui;paint-order:stroke;stroke:#fbfdff;stroke-width:4px;stroke-linejoin:round}.vertex{font:700 15px system-ui;fill:#354864}.angleText{font:700 17px system-ui;fill:var(--blue)}.tags{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0}.tag{font-size:.76rem;font-weight:750;border-radius:25px;padding:5px 10px}.opp{background:#e7f5f4;color:#087e91}.adj{background:#fff0e3;color:#9a4e0e}.hyp{background:#e9effe;color:#2954ab}.control{margin:17px 0}.controlTop{display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:700;flex-wrap:wrap}.controlTop output{font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}.inputRow{display:grid;grid-template-columns:minmax(0,1fr) 95px;align-items:center;gap:12px}.number{width:100%;border:1px solid #b7c8dd;border-radius:9px;padding:7px 8px;min-width:0}.bounds{display:flex;justify-content:space-between;color:var(--muted);font-size:.76rem}input[type=range]{width:100%;accent-color:var(--blue);min-height:38px;cursor:pointer}.action{padding:10px 14px;min-height:42px;border:1px solid var(--line);border-radius:10px;background:white;font-weight:750;color:var(--ink);cursor:pointer}.statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0}.stat{border:1px solid var(--line);padding:10px;border-radius:12px;min-width:0}.stat span{display:block;font-size:.75rem;color:var(--muted)}.stat strong{display:block;font-size:1rem;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.formula{border:1px solid var(--line);border-radius:12px;border-left:5px solid var(--blue);padding:10px 13px;margin:9px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:9px}.formula.sine{border-left-color:var(--cyan)}.formula.cosine{border-left-color:var(--orange)}.formula span{font-size:.91rem}.formula strong{font-size:1.13rem;font-variant-numeric:tabular-nums}.substitution{display:block;color:var(--muted);font-size:.77rem;font-variant-numeric:tabular-nums;margin-top:2px}.angleInfo{margin:8px 0 0;color:var(--muted);font-size:.84rem}.insight{background:#f1f6ff;border:1px solid #cfe0fa;border-radius:12px;padding:12px 14px;margin-top:14px;color:#24446e}.observation{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}.observation p{margin:5px 0}.foot{font-size:.8rem;color:#60728b;margin:15px 2px}.error{color:#a23434;font-size:.82rem;min-height:1.2em}@media(max-width:800px){.grid{grid-template-columns:1fr}.panel{padding:16px}.wrap{padding:18px 12px 35px}}@media(max-width:370px){.statgrid{grid-template-columns:1fr}.inputRow{grid-template-columns:minmax(0,1fr) 88px}}
+.flexcontrols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px}.control{margin:10px 0}.number{max-width:100px}.values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.values .stat strong{font-size:1.05rem}.eq{background:#f6f9fd;border:1px solid #dce4ef;border-radius:12px;padding:12px;margin:9px 0;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.scene svg{min-height:280px}.scene text{paint-order:stroke;stroke:#fbfdff;stroke-width:3.5px;stroke-linejoin:round;font:600 13px system-ui}.scene .major{font-weight:800;font-size:15px}.controls2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notes{font-size:.82rem;color:var(--muted)}@media(max-width:560px){.flexcontrols,.controls2{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}}
+.drag-grip:focus-visible{outline:none;filter:drop-shadow(0 0 4px #265fd2)}
+&lt;/style&gt;&lt;style&gt;
+/* Revisión de presentación: controles, gráfica y lenguaje matemático */
+:root{--bg:#f5f7fb;--ink:#14243b;--muted:#536680;--line:#dbe4f0;--blue:#245bcb;--shadow:0 5px 20px rgba(23,52,89,.055)}
+body{background:var(--bg);font-variant-numeric:tabular-nums}
+.panel{border-radius:18px;border:1px solid #dce5ef;box-shadow:var(--shadow)}
+h2{letter-spacing:-.015em;font-weight:750}
+.scene{background:linear-gradient(180deg,#ffffff 0%,#f2f7ff 100%);border:1px solid #ccdced;border-radius:15px;padding:9px;position:relative}
+.scene svg{overflow:visible}
+.scene svg text{paint-order:stroke fill;stroke:#fff;stroke-width:4.5px;stroke-linejoin:round;font-family:Inter,system-ui,Arial,sans-serif;font-weight:650;letter-spacing:.06px}
+.scene svg text.angle-emphasis{stroke:#fff;stroke-width:6px;fill:#6e40b8!important;font-size:15px!important;font-weight:850}
+.scene svg .drag-grip circle:last-child,.scene svg .handle{filter:drop-shadow(0 2px 3px rgba(25,50,90,.22))}
+.scene svg .drag-grip:focus-visible circle{stroke:#6e40b8;stroke-width:4px}
+.statgrid{gap:10px}
+.stat{border-radius:12px;background:#f8fafc;border:1px solid #e3eaf3;padding:12px;min-width:0}
+.stat span{display:block;color:#52647d;font-size:.82rem;margin-bottom:4px}
+.stat strong{font-size:1.07rem;font-weight:780;overflow-wrap:anywhere}
+.formula,.eq{border:1px solid #dbe5f4!important;background:#f8fbff!important;border-radius:13px!important;padding:12px 14px!important;margin-top:10px;line-height:1.6;overflow-wrap:anywhere}
+.formula{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.formula strong{font-size:1.07rem;font-variant-numeric:tabular-nums}
+.substitution{display:block;margin-top:4px;color:#4a627f}
+.math-card{background:#f8fbff;border:1px solid #dbe5f4;border-radius:13px;padding:13px 15px;margin:10px 0;min-width:0}
+.math-card .math-caption{font-size:.72rem;text-transform:uppercase;letter-spacing:.10em;font-weight:800;color:#47628d;margin-bottom:8px}
+.math-flow{display:flex;flex-wrap:wrap;gap:6px 9px;align-items:center;font-variant-numeric:tabular-nums}
+.math-part{padding:6px 9px;background:#fff;border:1px solid #e1e9f5;border-radius:8px;white-space:normal;overflow-wrap:anywhere;font-size:.95rem;font-weight:650}
+.math-equals{color:#4063a8;font-weight:900;font-size:1.08rem}
+.math-flow .math-part:last-child{background:#ebf3ff;border-color:#bbd2fb;color:#173e83}
+.math-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.control,.controlTop,.inputRow{min-width:0}
+.control label{font-weight:650}
+input[type=number]{font-variant-numeric:tabular-nums}
+button:focus-visible,input:focus-visible{outline:3px solid #87abf5;outline-offset:2px}
+@media(max-width:650px){.panel{padding:14px}.scene{padding:3px}.math-part{font-size:.86rem}.math-card{padding:10px}.stat{padding:10px}}
+&lt;/style&gt;&lt;style&gt;
+/* Distribución compacta: no estira tarjetas hasta igualar alturas */
+.wrap{padding:12px 12px 14px;max-width:1220px}
+.header{display:none}
+.grid{align-items:start;gap:12px}
+.panel{padding:15px 16px;border-radius:14px}
+.panel h2{margin-bottom:7px}
+.scene{margin-top:8px;padding:4px}
+.controls{column-gap:12px;row-gap:0}
+.control{margin:8px 0}
+.math-card{padding:10px 12px;margin:7px 0}
+.equation-presentation{margin:8px 0}
+.result-groups{display:grid;gap:12px;margin-top:4px}.result-group{background:rgba(8,22,38,.58);border:1px solid #33536f;border-radius:14px;padding:12px}.result-group h3{margin:0 0 10px;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#86e5f5}.values.grouped{margin:0}.values.grouped .stat{background:#0d1d2f}.section-note{margin:0 0 8px;color:var(--muted);font-size:.80rem}@media(max-width:620px){.values.grouped{grid-template-columns:1fr}}
+@media(max-width:800px){.wrap{padding:8px 7px 12px}.panel{padding:12px}.grid{gap:10px}}
+&lt;/style&gt;&lt;style&gt;
+/* Identidad visual armonizada con la serie de vectores. Se conservan los SVG y las fórmulas originales. */
+:root{--bg:#0b182a!important;--white:#11243a!important;--ink:#e8f1ff!important;--muted:#a4bed7!important;--line:#2b455f!important;--blue:#57d7ed!important;--cyan:#63e4d6!important;--orange:#ffbb83!important;--purple:#bdadff!important;--shadow:0 14px 35px #0003!important}
+html,body{background:#0b182a!important;color:#e8f1ff!important}body{font-family:Inter,system-ui,Segoe UI,sans-serif!important}
+.wrap{max-width:1340px!important;padding:14px 12px 22px!important}
+.grid{display:grid!important;grid-template-columns:minmax(0,1.42fr) minmax(325px,1fr)!important;align-items:start!important;gap:16px!important}
+.panel{background:linear-gradient(145deg,#11263e,#0d1b2e)!important;border:1px solid #2a425d!important;border-radius:18px!important;box-shadow:0 14px 35px #0002!important;padding:18px!important;min-width:0!important}
+.panel h2{color:#e9f3ff!important;font-weight:800!important;font-size:16px!important;margin-bottom:12px!important}
+.muted,.small.muted,.note,.notes,.subhead,.angleInfo,.bounds,.foot{color:#acc3d9!important}
+.scene{background:linear-gradient(180deg,#fafdff,#eaf3fb)!important;border:1px solid #3b5b77!important;border-radius:14px!important;padding:8px!important;margin-top:12px!important;overflow:hidden!important}
+.scene svg{max-width:100%!important;overflow:visible!important}
+.control{margin:11px 0!important;min-width:0!important}
+.controlTop{color:#c2d5e8!important;gap:8px!important}.controlTop output{color:#92ecfa!important}
+.inputRow{min-width:0!important}.number,input[type=number]{background:#091a2d!important;color:#f1f7ff!important;border:1px solid #40627f!important;border-radius:9px!important}
+input[type=range]{accent-color:#5bdbec!important}
+.stat,.values .stat{background:#162d46!important;border:1px solid #304962!important;border-radius:12px!important;padding:12px!important}
+.stat span,.statgrid .stat span{color:#a7c0d9!important}.stat strong,.statgrid .stat strong{color:#f3f8ff!important;font-weight:800!important}
+.math,.eq,.math-card,.formula,.insight{background:#0d2135!important;border:1px solid #2a4c65!important;border-radius:13px!important;color:#dbeafa!important;padding:12px 14px!important}
+.math .cap,.math-caption,.math-card .math-caption{color:#8ccee8!important}
+.math .expr,.eq strong,.formula strong,.math-flow{color:#dff8ff!important}
+.math-part{background:#152f47!important;border:1px solid #31516c!important;color:#e9f6ff!important;border-radius:8px!important}.math-flow .math-part:last-child{background:#164c5a!important;border-color:#3d9baf!important;color:#edffff!important}
+.math-equals{color:#83e9fa!important}
+.substitution{color:#b3cbdc!important}
+.action,.preset button,.modebar button{background:#1b354f!important;color:#d7eeff!important;border:1px solid #3a5976!important;border-radius:10px!important;cursor:pointer!important}
+.action:hover,.preset button:hover,.modebar button:hover{background:#254966!important}
+.modebar button[aria-pressed=true]{background:#176a77!important;border-color:#56d9e7!important;color:#fff!important}
+.status.ok{background:#103b38!important;border-color:#287f72!important;color:#a9f0d9!important}.status.bad{background:#4a2733!important;border-color:#a76267!important;color:#ffc1be!important}
+.tags .tag,.tag{border:1px solid #365873!important}
+@media(max-width:900px){.grid{grid-template-columns:1fr!important}.panel{padding:15px!important}}
+@media(max-width:600px){.wrap{padding:7px!important}.panel{padding:12px!important}.stat{padding:9px!important}}
+&lt;/style&gt;&lt;style id=&quot;resultados-separados-v2&quot;&gt;
+/* Resultados consistentes con el Lab 01: un resultado por renglón. */
+.values.grouped{grid-template-columns:1fr!important;gap:9px!important}
+.result-group{border-color:#355674!important;background:#0c2033!important}
+.result-group .stat{background:#162d46!important}
+.result-group .stat strong{font-size:1.07rem!important;font-weight:800!important;color:#ffffff!important;line-height:1.55!important}
+.result-group h3{color:#92e4f1!important;font-weight:850!important}
+.eq.resultado-desglosado{display:grid!important;gap:0!important;color:#ffffff!important;font-size:1rem!important;font-weight:750!important;line-height:1.6!important}
+.resultado-renglon{display:block!important;color:#ffffff!important;padding:9px 0!important;overflow-wrap:anywhere!important;white-space:normal!important}
+.resultado-renglon+.resultado-renglon{border-top:1px solid #304d67!important}
+@media(max-width:640px){.result-group .stat strong,.eq.resultado-desglosado{font-size:.96rem!important}}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&quot;wrap&quot;&gt;&lt;header class=&quot;header&quot;&gt;&lt;div&gt;&lt;div class=&quot;eyebrow&quot;&gt;Laboratorio virtual de física · Unidad 2&lt;/div&gt;&lt;h1&gt;05 · Ley de senos&lt;/h1&gt;&lt;p class=&quot;subtitle&quot;&gt;Varía dos ángulos y el lado comprendido entre ellos.&lt;/p&gt;&lt;/div&gt;&lt;/header&gt;&lt;div class=&quot;grid&quot;&gt;&lt;section class=&quot;panel&quot;&gt;&lt;h2&gt;Representación interactiva&lt;/h2&gt;&lt;div class=&quot;small muted&quot;&gt;Arrastra el punto azul del dibujo o modifica los controles numéricos.&lt;/div&gt;&lt;div class=&quot;scene&quot;&gt;&lt;svg aria-label=&quot;Representación geométrica dinámica de ley de senos&quot; id=&quot;drawing&quot; role=&quot;img&quot; viewbox=&quot;0 0 590 370&quot;&gt;&lt;/svg&gt;&lt;/div&gt;&lt;div class=&quot;flexcontrols&quot;&gt;&lt;div class=&quot;control&quot;&gt;&lt;div class=&quot;controlTop&quot;&gt;&lt;label for=&quot;A&quot;&gt;Ángulo A (°)&lt;/label&gt;&lt;output id=&quot;Av&quot;&gt;45.0000&lt;/output&gt;&lt;/div&gt;&lt;div class=&quot;inputRow&quot;&gt;&lt;input data-initial=&quot;45&quot; id=&quot;A&quot; max=&quot;165&quot; min=&quot;5&quot; step=&quot;0.1&quot; type=&quot;range&quot; value=&quot;45&quot;/&gt;&lt;input aria-label=&quot;Ángulo A (°)&quot; class=&quot;number&quot; id=&quot;An&quot; max=&quot;165&quot; min=&quot;5&quot; step=&quot;0.1&quot; type=&quot;number&quot; value=&quot;45&quot;/&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;control&quot;&gt;&lt;div class=&quot;controlTop&quot;&gt;&lt;label for=&quot;B&quot;&gt;Ángulo B (°)&lt;/label&gt;&lt;output id=&quot;Bv&quot;&gt;65.0000&lt;/output&gt;&lt;/div&gt;&lt;div class=&quot;inputRow&quot;&gt;&lt;input data-initial=&quot;65&quot; id=&quot;B&quot; max=&quot;165&quot; min=&quot;5&quot; step=&quot;0.1&quot; type=&quot;range&quot; value=&quot;65&quot;/&gt;&lt;input aria-label=&quot;Ángulo B (°)&quot; class=&quot;number&quot; id=&quot;Bn&quot; max=&quot;165&quot; min=&quot;5&quot; step=&quot;0.1&quot; type=&quot;number&quot; value=&quot;65&quot;/&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;control&quot;&gt;&lt;div class=&quot;controlTop&quot;&gt;&lt;label for=&quot;c&quot;&gt;Lado c (u)&lt;/label&gt;&lt;output id=&quot;cv&quot;&gt;10.0000&lt;/output&gt;&lt;/div&gt;&lt;div class=&quot;inputRow&quot;&gt;&lt;input data-initial=&quot;10&quot; id=&quot;c&quot; max=&quot;25&quot; min=&quot;1&quot; step=&quot;0.1&quot; type=&quot;range&quot; value=&quot;10&quot;/&gt;&lt;input aria-label=&quot;Lado c (u)&quot; class=&quot;number&quot; id=&quot;cn&quot; max=&quot;25&quot; min=&quot;1&quot; step=&quot;0.1&quot; type=&quot;number&quot; value=&quot;10&quot;/&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;button class=&quot;action&quot; id=&quot;reset&quot; type=&quot;button&quot;&gt;↺ Restablecer&lt;/button&gt;&lt;/section&gt;&lt;section class=&quot;panel&quot;&gt;&lt;h2&gt;Relaciones y resultados&lt;/h2&gt;&lt;p class=&quot;section-note&quot;&gt;Se distinguen las magnitudes del triángulo y las relaciones que valida la ley de senos.&lt;/p&gt;&lt;div class=&quot;result-groups&quot;&gt;&lt;div class=&quot;result-group&quot;&gt;&lt;h3&gt;Lados del triángulo&lt;/h3&gt;&lt;div class=&quot;values grouped&quot;&gt;&lt;div class=&quot;stat&quot;&gt;&lt;span&gt;Lado a&lt;/span&gt;&lt;strong id=&quot;a&quot;&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;div class=&quot;stat&quot;&gt;&lt;span&gt;Lado b&lt;/span&gt;&lt;strong id=&quot;b&quot;&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;div class=&quot;stat&quot;&gt;&lt;span&gt;Lado c&lt;/span&gt;&lt;strong id=&quot;cc&quot;&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;result-group&quot;&gt;&lt;h3&gt;Ángulo y comprobación&lt;/h3&gt;&lt;div class=&quot;values grouped&quot;&gt;&lt;div class=&quot;stat&quot;&gt;&lt;span&gt;Ángulo C&lt;/span&gt;&lt;strong id=&quot;C&quot;&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;eq&quot; id=&quot;eq&quot;&gt;&lt;/div&gt;&lt;div class=&quot;eq&quot; id=&quot;ratios&quot;&gt;&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;&lt;/main&gt;&lt;script&gt;(()=&gt;{&#x27;use strict&#x27;;const f=x=&gt;Number.isFinite(x)?x.toLocaleString(&#x27;es-EC&#x27;,{minimumFractionDigits:4,maximumFractionDigits:4}):&#x27;—&#x27;;const rad=d=&gt;d*Math.PI/180;const deg=r=&gt;r*180/Math.PI;const clamp=(x,a,b)=&gt;Math.max(a,Math.min(b,x));const $=id=&gt;document.getElementById(id);const ns=&#x27;http://www.w3.org/2000/svg&#x27;;const svg=$(&#x27;drawing&#x27;);function el(tag,attrs={},txt=&#x27;&#x27;){const e=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=&gt;e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;}function line(x1,y1,x2,y2,col=&#x27;#265fd2&#x27;,width=3,dash=&#x27;&#x27;){return el(&#x27;line&#x27;,{x1,y1,x2,y2,stroke:col,&#x27;stroke-width&#x27;:width,&#x27;stroke-dasharray&#x27;:dash});}function txt(x,y,s,col=&#x27;#13233d&#x27;,size=13){return el(&#x27;text&#x27;,{x,y,fill:col,&#x27;font-size&#x27;:size},s);}function circ(x,y,r=7,col=&#x27;#265fd2&#x27;){return el(&#x27;circle&#x27;,{cx:x,cy:y,r,fill:&#x27;#fff&#x27;,stroke:col,&#x27;stroke-width&#x27;:3});}function seg(x,y,X,Y,v,col=&#x27;#13233d&#x27;,dx=0,dy=-10){txt((x+X)/2+dx,(y+Y)/2+dy,v,col);}function clear(){svg.replaceChildren();}const vars={};document.querySelectorAll(&#x27;input[type=range]&#x27;).forEach(e=&gt;{vars[e.id]=+e.value;const out=$(e.id+&#x27;v&#x27;);const num=$(e.id+&#x27;n&#x27;);function update(v){if(!Number.isFinite(v))return;vars[e.id]=clamp(v,+e.min,+e.max);e.value=vars[e.id];num.value=vars[e.id];out.textContent=f(vars[e.id]);render();}e.addEventListener(&#x27;input&#x27;,()=&gt;update(+e.value));num.addEventListener(&#x27;change&#x27;,()=&gt;update(+num.value));});$(&#x27;reset&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{document.querySelectorAll(&#x27;input[type=range]&#x27;).forEach(e=&gt;{vars[e.id]=+e.dataset.initial;e.value=vars[e.id];$(e.id+&#x27;n&#x27;).value=vars[e.id];$(e.id+&#x27;v&#x27;).textContent=f(vars[e.id]);});render();});
+function showLines(id,lines){const root=$(id);root.classList.add(&#x27;resultado-desglosado&#x27;);root.replaceChildren();lines.forEach(line=&gt;{const el=document.createElement(&#x27;span&#x27;);el.className=&#x27;resultado-renglon&#x27;;el.textContent=line;root.append(el)});}
+function render(){clear();let A=vars.A,B=vars.B;if(A+B&gt;=175){B=174.9-A;if(B&lt;5){A=169.9-B;}vars.A=A;vars.B=B;$(&#x27;A&#x27;).value=A;$(&#x27;An&#x27;).value=A;$(&#x27;Av&#x27;).textContent=f(A);$(&#x27;B&#x27;).value=B;$(&#x27;Bn&#x27;).value=B;$(&#x27;Bv&#x27;).textContent=f(B);}let C=180-A-B,c=vars.c,k=c/Math.sin(rad(C)),a=k*Math.sin(rad(A)),b=k*Math.sin(rad(B));let p=[75,300],q=[485,300],x=b*b+c*c-a*a;let cx=75+(b*b+c*c-a*a)/(2*c*c)*410,cy=300-Math.sqrt(Math.max(0,b*b-Math.pow((b*b+c*c-a*a)/(2*c),2)))*(410/c);const m=Math.min(1,250/(300-cy));cy=300-(300-cy)*m;cx=75+(cx-75)*m;el(&#x27;polygon&#x27;,{points:`${p} ${q} ${cx},${cy}`,fill:&#x27;#e8f0fd&#x27;,stroke:&#x27;#265fd2&#x27;,&#x27;stroke-width&#x27;:3});txt(61,325,&#x27;A = &#x27;+f(A)+&#x27;°&#x27;);txt(438,325,&#x27;B = &#x27;+f(B)+&#x27;°&#x27;);txt(cx-15,cy-10,&#x27;C = &#x27;+f(C)+&#x27;°&#x27;);seg(...p,...q,&#x27;c = &#x27;+f(c),&#x27;#ad5c18&#x27;,0,23);seg(...q,cx,cy,&#x27;a = &#x27;+f(a),&#x27;#265fd2&#x27;,12,-8);seg(...p,cx,cy,&#x27;b = &#x27;+f(b),&#x27;#087e91&#x27;,-20,-8);$(&#x27;a&#x27;).textContent=f(a)+&#x27; u&#x27;;$(&#x27;b&#x27;).textContent=f(b)+&#x27; u&#x27;;$(&#x27;cc&#x27;).textContent=f(c)+&#x27; u&#x27;;$(&#x27;C&#x27;).textContent=f(C)+&#x27;°&#x27;;showLines(&#x27;eq&#x27;,[&#x27;A + B + C = 180,0000°&#x27;,f(A)+&#x27;° + &#x27;+f(B)+&#x27;° + &#x27;+f(C)+&#x27;° = 180,0000°&#x27;]);showLines(&#x27;ratios&#x27;,[&#x27;a / sen A = &#x27;+f(a/Math.sin(rad(A))),&#x27;b / sen B = &#x27;+f(b/Math.sin(rad(B))),&#x27;c / sen C = &#x27;+f(k)]); }
+const dragLabel=&#x27;Vértice C del triángulo oblicuángulo&#x27;;function handleLocation(){const A=rad(vars.A),B=rad(vars.B),C=rad(180-vars.A-vars.B),c=vars.c,b=c*Math.sin(B)/Math.sin(C);const x=b*Math.cos(A),h=b*Math.sin(A);let px=75+x*410/c,py=300-h*410/c;const m=Math.min(1,250/(300-py));return {x:75+(px-75)*m,y:300-(300-py)*m};}function dragAction(p){const y=Math.min(291,p.y),a=deg(Math.atan2(300-y,p.x-75)),b=deg(Math.atan2(300-y,485-p.x));if(a&gt;=5&amp;&amp;b&gt;=5&amp;&amp;a+b&lt;174.9){setControl(&#x27;A&#x27;,a);setControl(&#x27;B&#x27;,b);}}
+
+/* Arrastre accesible: las entradas numéricas y deslizadores permanecen disponibles. */
+function setControl(k,n){
+ const e=$(k);if(!e||!Number.isFinite(n))return;
+ const lo=+e.min,hi=+e.max;
+ n=clamp(n,lo,hi);
+ n=Math.round(n*10000)/10000;
+ vars[k]=n;e.value=n;$(k+&#x27;n&#x27;).value=n;$(k+&#x27;v&#x27;).textContent=f(n);
+}
+function svgPoint(ev){const mat=svg.getScreenCTM();if(!mat)return null;const p=svg.createSVGPoint();p.x=ev.clientX;p.y=ev.clientY;const q=p.matrixTransform(mat.inverse());return {x:q.x,y:q.y};}
+let currentHandle=null;
+function drawDragHandle(x,y,label){
+ if(!Number.isFinite(x)||!Number.isFinite(y))return;
+ const grp=document.createElementNS(ns,&#x27;g&#x27;);grp.setAttribute(&#x27;class&#x27;,&#x27;drag-grip&#x27;);grp.setAttribute(&#x27;role&#x27;,&#x27;button&#x27;);grp.setAttribute(&#x27;tabindex&#x27;,&#x27;0&#x27;);grp.setAttribute(&#x27;aria-label&#x27;,label+&#x27;; arrastra este punto o utiliza los controles numéricos&#x27;);grp.style.cursor=&#x27;grab&#x27;;grp.style.touchAction=&#x27;none&#x27;;
+ const halo=document.createElementNS(ns,&#x27;circle&#x27;);Object.entries({cx:x,cy:y,r:18,fill:&#x27;#eef5ff&#x27;,stroke:&#x27;#265fd2&#x27;,&#x27;stroke-width&#x27;:1.5,&#x27;stroke-dasharray&#x27;:&#x27;4 3&#x27;}).forEach(([k,v])=&gt;halo.setAttribute(k,v));
+ const core=document.createElementNS(ns,&#x27;circle&#x27;);Object.entries({cx:x,cy:y,r:8,fill:&#x27;#265fd2&#x27;,stroke:&#x27;#ffffff&#x27;,&#x27;stroke-width&#x27;:2.5}).forEach(([k,v])=&gt;core.setAttribute(k,v));
+ grp.append(halo,core);svg.appendChild(grp);
+ grp.addEventListener(&#x27;pointerdown&#x27;,ev=&gt;{ev.preventDefault();currentHandle=grp;svg.setPointerCapture(ev.pointerId);const p=svgPoint(ev);if(p){dragAction(p);render();}});
+ 
+ grp.addEventListener(&#x27;keydown&#x27;,ev=&gt;{if(![&#x27;ArrowUp&#x27;,&#x27;ArrowDown&#x27;,&#x27;ArrowLeft&#x27;,&#x27;ArrowRight&#x27;].includes(ev.key))return;ev.preventDefault();const d={ArrowUp:[0,-4],ArrowDown:[0,4],ArrowLeft:[-4,0],ArrowRight:[4,0]}[ev.key];dragAction({x:handleLocation().x+d[0],y:handleLocation().y+d[1]});render();});
+}
+svg.addEventListener(&#x27;pointermove&#x27;,ev=&gt;{if(currentHandle){const p=svgPoint(ev);if(p){dragAction(p);render();}}});
+svg.addEventListener(&#x27;pointerup&#x27;,()=&gt;{currentHandle=null});svg.addEventListener(&#x27;pointercancel&#x27;,()=&gt;{currentHandle=null});
+const oldRender=render;
+render=function(){oldRender();const p=handleLocation();drawDragHandle(p.x,p.y,dragLabel);};
+
+render();})();&lt;/script&gt;&lt;script&gt;(function(){function report(){const h=Math.ceil(document.body.getBoundingClientRect().height);parent.postMessage({laboratorioAltura:h},&#x27;*&#x27;)}addEventListener(&#x27;load&#x27;,report);if(&#x27;ResizeObserver&#x27;in window)new ResizeObserver(report).observe(document.body);addEventListener(&#x27;resize&#x27;,report);setTimeout(report,100)})();&lt;/script&gt;&lt;script&gt;
+(()=&gt;{
+const root=document;
+function emphasize(){
+ root.querySelectorAll(&#x27;svg text&#x27;).forEach(t=&gt;{
+  const str=(t.textContent||&#x27;&#x27;).trim();
+  if(/(?:^|\s|[=])(?:[αβγθφ]|∠[A-Z]|[ABC]\s*=\s*[-\d,.]+°|[αβγθφ]\s*[-=]|ángulo)/iu.test(str)||/°/.test(str))t.classList.add(&#x27;angle-emphasis&#x27;);
+ });
+}
+function parts(s){return s.split(/\s*=\s*/).map(x=&gt;x.trim()).filter(Boolean)}
+function buildMath(text,caption){const card=document.createElement(&#x27;div&#x27;);card.className=&#x27;math-card&#x27;;const top=document.createElement(&#x27;div&#x27;);top.className=&#x27;math-caption&#x27;;top.textContent=caption;card.append(top);const flow=document.createElement(&#x27;div&#x27;);flow.className=&#x27;math-flow&#x27;;parts(text).forEach((p,i)=&gt;{if(i){const equal=document.createElement(&#x27;span&#x27;);equal.className=&#x27;math-equals&#x27;;equal.textContent=&#x27;=&#x27;;flow.append(equal)}const part=document.createElement(&#x27;span&#x27;);part.className=&#x27;math-part&#x27;;part.textContent=p;flow.append(part)});card.append(flow);return card;}
+root.querySelectorAll(&#x27;#no-legacy-equation-mirror&#x27;).forEach(el=&gt;{const mirror=document.createElement(&#x27;div&#x27;);mirror.className=&#x27;equation-presentation&#x27;;el.after(mirror);el.classList.add(&#x27;math-sr&#x27;);let prev=null;function refresh(){const value=el.textContent.trim();if(value===prev)return;prev=value;mirror.replaceChildren(buildMath(value,&#x27;Relación matemática&#x27;));}new MutationObserver(refresh).observe(el,{childList:true,characterData:true,subtree:true});refresh();});
+let queued=false;const obs=new MutationObserver(()=&gt;{if(queued)return;queued=true;requestAnimationFrame(()=&gt;{queued=false;emphasize();});});
+root.querySelectorAll(&#x27;svg&#x27;).forEach(svg=&gt;obs.observe(svg,{childList:true,subtree:true,characterData:true}));emphasize();
+})();
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;" title="Ley de Senos"></iframe></section><section aria-labelledby="tab-1" class="tabPanel" hidden="" id="tab-panel-1" role="tabpanel"><iframe class="labframe" sandbox="allow-scripts" scrolling="no" srcdoc="&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;es&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;/&gt;&lt;meta content=&quot;width=device-width,initial-scale=1&quot; name=&quot;viewport&quot;/&gt;&lt;title&gt;Laboratorio 06 | Ley de cosenos&lt;/title&gt;&lt;style&gt;
+:root{--bg:#f3f6fb;--white:#fff;--ink:#13233d;--muted:#52647d;--line:#dce4ef;--blue:#265fd2;--cyan:#087e91;--orange:#ad5c18;--shadow:0 10px 30px rgba(20,40,78,.06)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,&#x27;Segoe UI&#x27;,Arial,sans-serif;line-height:1.5}button,input{font:inherit}button:focus-visible,input:focus-visible,[role=slider]:focus-visible{outline:3px solid #85b4fd;outline-offset:3px}.wrap{max-width:1190px;margin:auto;padding:27px 20px 45px}.eyebrow{letter-spacing:.13em;font-size:.76rem;font-weight:800;color:#315b9e;text-transform:uppercase}.header{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:20px;flex-wrap:wrap}h1{font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.18;margin:5px 0}h2{font-size:1.06rem;margin:0 0 6px}.subtitle{color:var(--muted);margin:0;max-width:780px}.pill{background:#e6effe;color:#2456ab;border-radius:30px;padding:7px 12px;font-size:.79rem;font-weight:800}.grid{display:grid;grid-template-columns:minmax(0,1.38fr) minmax(300px,1fr);gap:17px}.panel{background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:20px;min-width:0}.muted{color:var(--muted)}.small{font-size:.86rem}.scene{background:linear-gradient(180deg,#fbfdff,#edf4ff);border:1px solid #e1eaf8;border-radius:15px;padding:7px;margin:14px 0 0}.scene svg{display:block;width:100%;height:auto;touch-action:pan-y}.triangle{fill:rgba(38,95,210,.06);stroke:var(--blue);stroke-width:3.5;stroke-linejoin:round}.construction{stroke:#b1c2dd;stroke-dasharray:5 6;stroke-width:1.5}.handle{fill:white;stroke:var(--blue);stroke-width:4;cursor:grab}.handle:active{cursor:grabbing}.sideLabel{font:700 13px system-ui;paint-order:stroke;stroke:#fbfdff;stroke-width:4px;stroke-linejoin:round}.vertex{font:700 15px system-ui;fill:#354864}.angleText{font:700 17px system-ui;fill:var(--blue)}.tags{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0}.tag{font-size:.76rem;font-weight:750;border-radius:25px;padding:5px 10px}.opp{background:#e7f5f4;color:#087e91}.adj{background:#fff0e3;color:#9a4e0e}.hyp{background:#e9effe;color:#2954ab}.control{margin:17px 0}.controlTop{display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:700;flex-wrap:wrap}.controlTop output{font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}.inputRow{display:grid;grid-template-columns:minmax(0,1fr) 95px;align-items:center;gap:12px}.number{width:100%;border:1px solid #b7c8dd;border-radius:9px;padding:7px 8px;min-width:0}.bounds{display:flex;justify-content:space-between;color:var(--muted);font-size:.76rem}input[type=range]{width:100%;accent-color:var(--blue);min-height:38px;cursor:pointer}.action{padding:10px 14px;min-height:42px;border:1px solid var(--line);border-radius:10px;background:white;font-weight:750;color:var(--ink);cursor:pointer}.statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0}.stat{border:1px solid var(--line);padding:10px;border-radius:12px;min-width:0}.stat span{display:block;font-size:.75rem;color:var(--muted)}.stat strong{display:block;font-size:1rem;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.formula{border:1px solid var(--line);border-radius:12px;border-left:5px solid var(--blue);padding:10px 13px;margin:9px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:9px}.formula.sine{border-left-color:var(--cyan)}.formula.cosine{border-left-color:var(--orange)}.formula span{font-size:.91rem}.formula strong{font-size:1.13rem;font-variant-numeric:tabular-nums}.substitution{display:block;color:var(--muted);font-size:.77rem;font-variant-numeric:tabular-nums;margin-top:2px}.angleInfo{margin:8px 0 0;color:var(--muted);font-size:.84rem}.insight{background:#f1f6ff;border:1px solid #cfe0fa;border-radius:12px;padding:12px 14px;margin-top:14px;color:#24446e}.observation{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}.observation p{margin:5px 0}.foot{font-size:.8rem;color:#60728b;margin:15px 2px}.error{color:#a23434;font-size:.82rem;min-height:1.2em}@media(max-width:800px){.grid{grid-template-columns:1fr}.panel{padding:16px}.wrap{padding:18px 12px 35px}}@media(max-width:370px){.statgrid{grid-template-columns:1fr}.inputRow{grid-template-columns:minmax(0,1fr) 88px}}
+.flexcontrols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px}.control{margin:10px 0}.number{max-width:100px}.values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.values .stat strong{font-size:1.05rem}.eq{background:#f6f9fd;border:1px solid #dce4ef;border-radius:12px;padding:12px;margin:9px 0;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.scene svg{min-height:280px}.scene text{paint-order:stroke;stroke:#fbfdff;stroke-width:3.5px;stroke-linejoin:round;font:600 13px system-ui}.scene .major{font-weight:800;font-size:15px}.controls2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notes{font-size:.82rem;color:var(--muted)}@media(max-width:560px){.flexcontrols,.controls2{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}}
+.drag-grip:focus-visible{outline:none;filter:drop-shadow(0 0 4px #265fd2)}
+&lt;/style&gt;&lt;style&gt;
+/* Revisión de presentación: controles, gráfica y lenguaje matemático */
+:root{--bg:#f5f7fb;--ink:#14243b;--muted:#536680;--line:#dbe4f0;--blue:#245bcb;--shadow:0 5px 20px rgba(23,52,89,.055)}
+body{background:var(--bg);font-variant-numeric:tabular-nums}
+.panel{border-radius:18px;border:1px solid #dce5ef;box-shadow:var(--shadow)}
+h2{letter-spacing:-.015em;font-weight:750}
+.scene{background:linear-gradient(180deg,#ffffff 0%,#f2f7ff 100%);border:1px solid #ccdced;border-radius:15px;padding:9px;position:relative}
+.scene svg{overflow:visible}
+.scene svg text{paint-order:stroke fill;stroke:#fff;stroke-width:4.5px;stroke-linejoin:round;font-family:Inter,system-ui,Arial,sans-serif;font-weight:650;letter-spacing:.06px}
+.scene svg text.angle-emphasis{stroke:#fff;stroke-width:6px;fill:#6e40b8!important;font-size:15px!important;font-weight:850}
+.scene svg .drag-grip circle:last-child,.scene svg .handle{filter:drop-shadow(0 2px 3px rgba(25,50,90,.22))}
+.scene svg .drag-grip:focus-visible circle{stroke:#6e40b8;stroke-width:4px}
+.statgrid{gap:10px}
+.stat{border-radius:12px;background:#f8fafc;border:1px solid #e3eaf3;padding:12px;min-width:0}
+.stat span{display:block;color:#52647d;font-size:.82rem;margin-bottom:4px}
+.stat strong{font-size:1.07rem;font-weight:780;overflow-wrap:anywhere}
+.formula,.eq{border:1px solid #dbe5f4!important;background:#f8fbff!important;border-radius:13px!important;padding:12px 14px!important;margin-top:10px;line-height:1.6;overflow-wrap:anywhere}
+.formula{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.formula strong{font-size:1.07rem;font-variant-numeric:tabular-nums}
+.substitution{display:block;margin-top:4px;color:#4a627f}
+.math-card{background:#f8fbff;border:1px solid #dbe5f4;border-radius:13px;padding:13px 15px;margin:10px 0;min-width:0}
+.math-card .math-caption{font-size:.72rem;text-transform:uppercase;letter-spacing:.10em;font-weight:800;color:#47628d;margin-bottom:8px}
+.math-flow{display:flex;flex-wrap:wrap;gap:6px 9px;align-items:center;font-variant-numeric:tabular-nums}
+.math-part{padding:6px 9px;background:#fff;border:1px solid #e1e9f5;border-radius:8px;white-space:normal;overflow-wrap:anywhere;font-size:.95rem;font-weight:650}
+.math-equals{color:#4063a8;font-weight:900;font-size:1.08rem}
+.math-flow .math-part:last-child{background:#ebf3ff;border-color:#bbd2fb;color:#173e83}
+.math-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.control,.controlTop,.inputRow{min-width:0}
+.control label{font-weight:650}
+input[type=number]{font-variant-numeric:tabular-nums}
+button:focus-visible,input:focus-visible{outline:3px solid #87abf5;outline-offset:2px}
+@media(max-width:650px){.panel{padding:14px}.scene{padding:3px}.math-part{font-size:.86rem}.math-card{padding:10px}.stat{padding:10px}}
+&lt;/style&gt;&lt;style&gt;
+/* Distribución compacta: no estira tarjetas hasta igualar alturas */
+.wrap{padding:12px 12px 14px;max-width:1220px}
+.header{display:none}
+.grid{align-items:start;gap:12px}
+.panel{padding:15px 16px;border-radius:14px}
+.panel h2{margin-bottom:7px}
+.scene{margin-top:8px;padding:4px}
+.controls{column-gap:12px;row-gap:0}
+.control{margin:8px 0}
+.math-card{padding:10px 12px;margin:7px 0}
+.equation-presentation{margin:8px 0}
+.result-groups{display:grid;gap:12px;margin-top:4px}.result-group{background:rgba(8,22,38,.58);border:1px solid #33536f;border-radius:14px;padding:12px}.result-group h3{margin:0 0 10px;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#86e5f5}.values.grouped{margin:0}.values.grouped .stat{background:#0d1d2f}.section-note{margin:0 0 8px;color:var(--muted);font-size:.80rem}@media(max-width:620px){.values.grouped{grid-template-columns:1fr}}
+@media(max-width:800px){.wrap{padding:8px 7px 12px}.panel{padding:12px}.grid{gap:10px}}
+&lt;/style&gt;&lt;style&gt;.values{grid-template-columns:repeat(3,minmax(0,1fr))}@media(max-width:560px){.values{grid-template-columns:1fr}}&lt;/style&gt;&lt;style&gt;
+/* Identidad visual armonizada con la serie de vectores. Se conservan los SVG y las fórmulas originales. */
+:root{--bg:#0b182a!important;--white:#11243a!important;--ink:#e8f1ff!important;--muted:#a4bed7!important;--line:#2b455f!important;--blue:#57d7ed!important;--cyan:#63e4d6!important;--orange:#ffbb83!important;--purple:#bdadff!important;--shadow:0 14px 35px #0003!important}
+html,body{background:#0b182a!important;color:#e8f1ff!important}body{font-family:Inter,system-ui,Segoe UI,sans-serif!important}
+.wrap{max-width:1340px!important;padding:14px 12px 22px!important}
+.grid{display:grid!important;grid-template-columns:minmax(0,1.42fr) minmax(325px,1fr)!important;align-items:start!important;gap:16px!important}
+.panel{background:linear-gradient(145deg,#11263e,#0d1b2e)!important;border:1px solid #2a425d!important;border-radius:18px!important;box-shadow:0 14px 35px #0002!important;padding:18px!important;min-width:0!important}
+.panel h2{color:#e9f3ff!important;font-weight:800!important;font-size:16px!important;margin-bottom:12px!important}
+.muted,.small.muted,.note,.notes,.subhead,.angleInfo,.bounds,.foot{color:#acc3d9!important}
+.scene{background:linear-gradient(180deg,#fafdff,#eaf3fb)!important;border:1px solid #3b5b77!important;border-radius:14px!important;padding:8px!important;margin-top:12px!important;overflow:hidden!important}
+.scene svg{max-width:100%!important;overflow:visible!important}
+.control{margin:11px 0!important;min-width:0!important}
+.controlTop{color:#c2d5e8!important;gap:8px!important}.controlTop output{color:#92ecfa!important}
+.inputRow{min-width:0!important}.number,input[type=number]{background:#091a2d!important;color:#f1f7ff!important;border:1px solid #40627f!important;border-radius:9px!important}
+input[type=range]{accent-color:#5bdbec!important}
+.stat,.values .stat{background:#162d46!important;border:1px solid #304962!important;border-radius:12px!important;padding:12px!important}
+.stat span,.statgrid .stat span{color:#a7c0d9!important}.stat strong,.statgrid .stat strong{color:#f3f8ff!important;font-weight:800!important}
+.math,.eq,.math-card,.formula,.insight{background:#0d2135!important;border:1px solid #2a4c65!important;border-radius:13px!important;color:#dbeafa!important;padding:12px 14px!important}
+.math .cap,.math-caption,.math-card .math-caption{color:#8ccee8!important}
+.math .expr,.eq strong,.formula strong,.math-flow{color:#dff8ff!important}
+.math-part{background:#152f47!important;border:1px solid #31516c!important;color:#e9f6ff!important;border-radius:8px!important}.math-flow .math-part:last-child{background:#164c5a!important;border-color:#3d9baf!important;color:#edffff!important}
+.math-equals{color:#83e9fa!important}
+.substitution{color:#b3cbdc!important}
+.action,.preset button,.modebar button{background:#1b354f!important;color:#d7eeff!important;border:1px solid #3a5976!important;border-radius:10px!important;cursor:pointer!important}
+.action:hover,.preset button:hover,.modebar button:hover{background:#254966!important}
+.modebar button[aria-pressed=true]{background:#176a77!important;border-color:#56d9e7!important;color:#fff!important}
+.status.ok{background:#103b38!important;border-color:#287f72!important;color:#a9f0d9!important}.status.bad{background:#4a2733!important;border-color:#a76267!important;color:#ffc1be!important}
+.tags .tag,.tag{border:1px solid #365873!important}
+@media(max-width:900px){.grid{grid-template-columns:1fr!important}.panel{padding:15px!important}}
+@media(max-width:600px){.wrap{padding:7px!important}.panel{padding:12px!important}.stat{padding:9px!important}}
+&lt;/style&gt;&lt;style id=&quot;resultados-separados-v2&quot;&gt;
+/* Resultados consistentes con el Lab 01: un resultado por renglón. */
+.values.grouped{grid-template-columns:1fr!important;gap:9px!important}
+.result-group{border-color:#355674!important;background:#0c2033!important}
+.result-group .stat{background:#162d46!important}
+.result-group .stat strong{font-size:1.07rem!important;font-weight:800!important;color:#ffffff!important;line-height:1.55!important}
+.result-group h3{color:#92e4f1!important;font-weight:850!important}
+.eq.resultado-desglosado{display:grid!important;gap:0!important;color:#ffffff!important;font-size:1rem!important;font-weight:750!important;line-height:1.6!important}
+.resultado-renglon{display:block!important;color:#ffffff!important;padding:9px 0!important;overflow-wrap:anywhere!important;white-space:normal!important}
+.resultado-renglon+.resultado-renglon{border-top:1px solid #304d67!important}
+@media(max-width:640px){.result-group .stat strong,.eq.resultado-desglosado{font-size:.96rem!important}}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&quot;wrap&quot;&gt;&lt;header class=&quot;header&quot;&gt;&lt;div&gt;&lt;div class=&quot;eyebrow&quot;&gt;Laboratorio virtual de física · Unidad 2&lt;/div&gt;&lt;h1&gt;06 · Ley de cosenos&lt;/h1&gt;&lt;p class=&quot;subtitle&quot;&gt;Observa la relación entre dos lados, el ángulo comprendido y el tercer lado.&lt;/p&gt;&lt;/div&gt;&lt;/header&gt;&lt;div class=&quot;grid&quot;&gt;&lt;section class=&quot;panel&quot;&gt;&lt;h2&gt;Representación interactiva&lt;/h2&gt;&lt;div class=&quot;small muted&quot;&gt;Arrastra el punto azul del dibujo o modifica los controles numéricos.&lt;/div&gt;&lt;div class=&quot;scene&quot;&gt;&lt;svg aria-label=&quot;Representación geométrica dinámica de ley de cosenos&quot; id=&quot;drawing&quot; role=&quot;img&quot; viewbox=&quot;0 0 590 370&quot;&gt;&lt;/svg&gt;&lt;/div&gt;&lt;div class=&quot;flexcontrols&quot;&gt;&lt;div class=&quot;control&quot;&gt;&lt;div class=&quot;controlTop&quot;&gt;&lt;label for=&quot;a&quot;&gt;Lado a (u)&lt;/label&gt;&lt;output id=&quot;av&quot;&gt;8.0000&lt;/output&gt;&lt;/div&gt;&lt;div class=&quot;inputRow&quot;&gt;&lt;input data-initial=&quot;8&quot; id=&quot;a&quot; max=&quot;18&quot; min=&quot;1&quot; step=&quot;0.1&quot; type=&quot;range&quot; value=&quot;8&quot;/&gt;&lt;input aria-label=&quot;Lado a (u)&quot; class=&quot;number&quot; id=&quot;an&quot; max=&quot;18&quot; min=&quot;1&quot; step=&quot;0.1&quot; type=&quot;number&quot; value=&quot;8&quot;/&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;control&quot;&gt;&lt;div class=&quot;controlTop&quot;&gt;&lt;label for=&quot;b&quot;&gt;Lado b (u)&lt;/label&gt;&lt;output id=&quot;bv&quot;&gt;11.0000&lt;/output&gt;&lt;/div&gt;&lt;div class=&quot;inputRow&quot;&gt;&lt;input data-initial=&quot;11&quot; id=&quot;b&quot; max=&quot;18&quot; min=&quot;1&quot; step=&quot;0.1&quot; type=&quot;range&quot; value=&quot;11&quot;/&gt;&lt;input aria-label=&quot;Lado b (u)&quot; class=&quot;number&quot; id=&quot;bn&quot; max=&quot;18&quot; min=&quot;1&quot; step=&quot;0.1&quot; type=&quot;number&quot; value=&quot;11&quot;/&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;control&quot;&gt;&lt;div class=&quot;controlTop&quot;&gt;&lt;label for=&quot;C&quot;&gt;Ángulo comprendido C (°)&lt;/label&gt;&lt;output id=&quot;Cv&quot;&gt;70.0000&lt;/output&gt;&lt;/div&gt;&lt;div class=&quot;inputRow&quot;&gt;&lt;input data-initial=&quot;70&quot; id=&quot;C&quot; max=&quot;175&quot; min=&quot;5&quot; step=&quot;0.1&quot; type=&quot;range&quot; value=&quot;70&quot;/&gt;&lt;input aria-label=&quot;Ángulo comprendido C (°)&quot; class=&quot;number&quot; id=&quot;Cn&quot; max=&quot;175&quot; min=&quot;5&quot; step=&quot;0.1&quot; type=&quot;number&quot; value=&quot;70&quot;/&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;button class=&quot;action&quot; id=&quot;reset&quot; type=&quot;button&quot;&gt;↺ Restablecer&lt;/button&gt;&lt;/section&gt;&lt;section class=&quot;panel&quot;&gt;&lt;h2&gt;Relaciones y resultados&lt;/h2&gt;&lt;p class=&quot;section-note&quot;&gt;Separamos el lado resultante de los ángulos derivados para interpretar mejor la ley de cosenos.&lt;/p&gt;&lt;div class=&quot;result-groups&quot;&gt;&lt;div class=&quot;result-group&quot;&gt;&lt;h3&gt;Magnitud resultante&lt;/h3&gt;&lt;div class=&quot;values grouped&quot;&gt;&lt;div class=&quot;stat&quot;&gt;&lt;span&gt;Lado c&lt;/span&gt;&lt;strong id=&quot;cout&quot;&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;result-group&quot;&gt;&lt;h3&gt;Ángulos del triángulo&lt;/h3&gt;&lt;div class=&quot;values grouped&quot;&gt;&lt;div class=&quot;stat&quot;&gt;&lt;span&gt;Ángulo A&lt;/span&gt;&lt;strong id=&quot;Aout&quot;&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;div class=&quot;stat&quot;&gt;&lt;span&gt;Ángulo B&lt;/span&gt;&lt;strong id=&quot;Bout&quot;&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;eq&quot; id=&quot;eq&quot;&gt;&lt;/div&gt;&lt;div class=&quot;eq&quot; id=&quot;special&quot;&gt;&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;&lt;/main&gt;&lt;script&gt;(()=&gt;{&#x27;use strict&#x27;;const f=x=&gt;Number.isFinite(x)?x.toLocaleString(&#x27;es-EC&#x27;,{minimumFractionDigits:4,maximumFractionDigits:4}):&#x27;—&#x27;;const rad=d=&gt;d*Math.PI/180;const deg=r=&gt;r*180/Math.PI;const clamp=(x,a,b)=&gt;Math.max(a,Math.min(b,x));const $=id=&gt;document.getElementById(id);const ns=&#x27;http://www.w3.org/2000/svg&#x27;;const svg=$(&#x27;drawing&#x27;);function el(tag,attrs={},txt=&#x27;&#x27;){const e=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=&gt;e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;}function line(x1,y1,x2,y2,col=&#x27;#265fd2&#x27;,width=3,dash=&#x27;&#x27;){return el(&#x27;line&#x27;,{x1,y1,x2,y2,stroke:col,&#x27;stroke-width&#x27;:width,&#x27;stroke-dasharray&#x27;:dash});}function txt(x,y,s,col=&#x27;#13233d&#x27;,size=13){return el(&#x27;text&#x27;,{x,y,fill:col,&#x27;font-size&#x27;:size},s);}function circ(x,y,r=7,col=&#x27;#265fd2&#x27;){return el(&#x27;circle&#x27;,{cx:x,cy:y,r,fill:&#x27;#fff&#x27;,stroke:col,&#x27;stroke-width&#x27;:3});}function seg(x,y,X,Y,v,col=&#x27;#13233d&#x27;,dx=0,dy=-10){txt((x+X)/2+dx,(y+Y)/2+dy,v,col);}function clear(){svg.replaceChildren();}const vars={};document.querySelectorAll(&#x27;input[type=range]&#x27;).forEach(e=&gt;{vars[e.id]=+e.value;const out=$(e.id+&#x27;v&#x27;);const num=$(e.id+&#x27;n&#x27;);function update(v){if(!Number.isFinite(v))return;vars[e.id]=clamp(v,+e.min,+e.max);e.value=vars[e.id];num.value=vars[e.id];out.textContent=f(vars[e.id]);render();}e.addEventListener(&#x27;input&#x27;,()=&gt;update(+e.value));num.addEventListener(&#x27;change&#x27;,()=&gt;update(+num.value));});$(&#x27;reset&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{document.querySelectorAll(&#x27;input[type=range]&#x27;).forEach(e=&gt;{vars[e.id]=+e.dataset.initial;e.value=vars[e.id];$(e.id+&#x27;n&#x27;).value=vars[e.id];$(e.id+&#x27;v&#x27;).textContent=f(vars[e.id]);});render();});
+function showLines(id,lines){const root=$(id);root.classList.add(&#x27;resultado-desglosado&#x27;);root.replaceChildren();lines.forEach(line=&gt;{const el=document.createElement(&#x27;span&#x27;);el.className=&#x27;resultado-renglon&#x27;;el.textContent=line;root.append(el)});}
+function render(){
+ clear();
+ const a=vars.a,b=vars.b,C=vars.C;
+ const c=Math.sqrt(a*a+b*b-2*a*b*Math.cos(rad(C)));
+ // El ángulo A es opuesto a a; el ángulo B es opuesto a b.
+ // Se utiliza arcocoseno para obtener de forma unívoca los ángulos de 0° a 180°.
+ const A=deg(Math.acos(clamp((b*b+c*c-a*a)/(2*b*c),-1,1)));
+ const B=180-C-A;
+ const u=[140,285],scale=Math.min(275/Math.max(a,b),195/(Math.max(a,b)*Math.sin(rad(C))+.0001));
+ const v=[u[0]+a*scale,u[1]],w=[u[0]+b*scale*Math.cos(rad(C)),u[1]-b*scale*Math.sin(rad(C))];
+ el(&#x27;polygon&#x27;,{points:[u,v,w].map(p=&gt;p.join(&#x27;,&#x27;)).join(&#x27; &#x27;),fill:&#x27;#e8f0fd&#x27;,stroke:&#x27;#265fd2&#x27;,&#x27;stroke-width&#x27;:3});
+ // Arco interior del ángulo comprendido C, desde el lado a hasta el lado b.
+ // Una polilínea permite representarlo sin ambigüedades también para C obtuso.
+ const radius=31,steps=Math.max(12,Math.ceil(C/4));
+ const pts=Array.from({length:steps+1},(_,i)=&gt;{const t=rad(C*i/steps);return [u[0]+radius*Math.cos(t),u[1]-radius*Math.sin(t)].join(&#x27;,&#x27;)}).join(&#x27; &#x27;);
+ el(&#x27;polyline&#x27;,{points:pts,fill:&#x27;none&#x27;,stroke:&#x27;#6e40b8&#x27;,&#x27;stroke-width&#x27;:3.6,&#x27;stroke-linecap&#x27;:&#x27;round&#x27;,&#x27;stroke-linejoin&#x27;:&#x27;round&#x27;});
+ circ(...u);circ(...v);circ(...w);
+ seg(...u,...v,&#x27;a = &#x27;+f(a),&#x27;#ad5c18&#x27;,0,20);
+ seg(...u,...w,&#x27;b = &#x27;+f(b),&#x27;#087e91&#x27;,-14,-11);
+ seg(...v,...w,&#x27;c = &#x27;+f(c),&#x27;#265fd2&#x27;,12,-9);
+ // La etiqueta sigue la bisectriz del ángulo para que sea claro dónde está C.
+ const half=rad(C/2),labelRadius=70;
+ txt(u[0]+labelRadius*Math.cos(half)-12,u[1]-labelRadius*Math.sin(half)-4,&#x27;C = &#x27;+f(C)+&#x27;°&#x27;,&#x27;#6e40b8&#x27;);
+ $(&#x27;cout&#x27;).textContent=f(c)+&#x27; u&#x27;;
+ $(&#x27;Aout&#x27;).textContent=f(A)+&#x27;°&#x27;;
+ $(&#x27;Bout&#x27;).textContent=f(B)+&#x27;°&#x27;;
+ showLines(&#x27;eq&#x27;,[&#x27;c² = a² + b² − 2ab cos C&#x27;,f(a*a)+&#x27; + &#x27;+f(b*b)+&#x27; − &#x27;+f(2*a*b*Math.cos(rad(C)))+&#x27; = &#x27;+f(c*c)+&#x27; u²&#x27;]);
+ showLines(&#x27;special&#x27;,[&#x27;cos C = &#x27;+f(Math.cos(rad(C))),...(C===90?[&#x27;En 90,0000° se cumple Pitágoras.&#x27;]:[])]);
+}const dragLabel=&#x27;Vértice móvil, modifica b y el ángulo C&#x27;;function handleLocation(){const a=vars.a,b=vars.b,C=rad(vars.C),s=Math.min(275/Math.max(a,b),195/(Math.max(a,b)*Math.sin(C)+.0001));return {x:140+b*s*Math.cos(C),y:285-b*s*Math.sin(C)};}function dragAction(p){const dx=p.x-140,dy=285-p.y;const theta=deg(Math.atan2(Math.max(1,dy),dx));const a=vars.a,b=vars.b,C=rad(vars.C),s=Math.min(275/Math.max(a,b),195/(Math.max(a,b)*Math.sin(C)+.0001));setControl(&#x27;b&#x27;,Math.hypot(dx,dy)/s);setControl(&#x27;C&#x27;,theta);}
+
+/* Arrastre accesible: las entradas numéricas y deslizadores permanecen disponibles. */
+function setControl(k,n){
+ const e=$(k);if(!e||!Number.isFinite(n))return;
+ const lo=+e.min,hi=+e.max;
+ n=clamp(n,lo,hi);
+ n=Math.round(n*10000)/10000;
+ vars[k]=n;e.value=n;$(k+&#x27;n&#x27;).value=n;$(k+&#x27;v&#x27;).textContent=f(n);
+}
+function svgPoint(ev){const mat=svg.getScreenCTM();if(!mat)return null;const p=svg.createSVGPoint();p.x=ev.clientX;p.y=ev.clientY;const q=p.matrixTransform(mat.inverse());return {x:q.x,y:q.y};}
+let currentHandle=null;
+function drawDragHandle(x,y,label){
+ if(!Number.isFinite(x)||!Number.isFinite(y))return;
+ const grp=document.createElementNS(ns,&#x27;g&#x27;);grp.setAttribute(&#x27;class&#x27;,&#x27;drag-grip&#x27;);grp.setAttribute(&#x27;role&#x27;,&#x27;button&#x27;);grp.setAttribute(&#x27;tabindex&#x27;,&#x27;0&#x27;);grp.setAttribute(&#x27;aria-label&#x27;,label+&#x27;; arrastra este punto o utiliza los controles numéricos&#x27;);grp.style.cursor=&#x27;grab&#x27;;grp.style.touchAction=&#x27;none&#x27;;
+ const halo=document.createElementNS(ns,&#x27;circle&#x27;);Object.entries({cx:x,cy:y,r:18,fill:&#x27;#eef5ff&#x27;,stroke:&#x27;#265fd2&#x27;,&#x27;stroke-width&#x27;:1.5,&#x27;stroke-dasharray&#x27;:&#x27;4 3&#x27;}).forEach(([k,v])=&gt;halo.setAttribute(k,v));
+ const core=document.createElementNS(ns,&#x27;circle&#x27;);Object.entries({cx:x,cy:y,r:8,fill:&#x27;#265fd2&#x27;,stroke:&#x27;#ffffff&#x27;,&#x27;stroke-width&#x27;:2.5}).forEach(([k,v])=&gt;core.setAttribute(k,v));
+ grp.append(halo,core);svg.appendChild(grp);
+ grp.addEventListener(&#x27;pointerdown&#x27;,ev=&gt;{ev.preventDefault();currentHandle=grp;svg.setPointerCapture(ev.pointerId);const p=svgPoint(ev);if(p){dragAction(p);render();}});
+ 
+ grp.addEventListener(&#x27;keydown&#x27;,ev=&gt;{if(![&#x27;ArrowUp&#x27;,&#x27;ArrowDown&#x27;,&#x27;ArrowLeft&#x27;,&#x27;ArrowRight&#x27;].includes(ev.key))return;ev.preventDefault();const d={ArrowUp:[0,-4],ArrowDown:[0,4],ArrowLeft:[-4,0],ArrowRight:[4,0]}[ev.key];dragAction({x:handleLocation().x+d[0],y:handleLocation().y+d[1]});render();});
+}
+svg.addEventListener(&#x27;pointermove&#x27;,ev=&gt;{if(currentHandle){const p=svgPoint(ev);if(p){dragAction(p);render();}}});
+svg.addEventListener(&#x27;pointerup&#x27;,()=&gt;{currentHandle=null});svg.addEventListener(&#x27;pointercancel&#x27;,()=&gt;{currentHandle=null});
+const oldRender=render;
+render=function(){oldRender();const p=handleLocation();drawDragHandle(p.x,p.y,dragLabel);};
+
+render();})();&lt;/script&gt;&lt;script&gt;(function(){function report(){const h=Math.ceil(document.body.getBoundingClientRect().height);parent.postMessage({laboratorioAltura:h},&#x27;*&#x27;)}addEventListener(&#x27;load&#x27;,report);if(&#x27;ResizeObserver&#x27;in window)new ResizeObserver(report).observe(document.body);addEventListener(&#x27;resize&#x27;,report);setTimeout(report,100)})();&lt;/script&gt;&lt;script&gt;
+(()=&gt;{
+const root=document;
+function emphasize(){
+ root.querySelectorAll(&#x27;svg text&#x27;).forEach(t=&gt;{
+  const str=(t.textContent||&#x27;&#x27;).trim();
+  if(/(?:^|\s|[=])(?:[αβγθφ]|∠[A-Z]|[ABC]\s*=\s*[-\d,.]+°|[αβγθφ]\s*[-=]|ángulo)/iu.test(str)||/°/.test(str))t.classList.add(&#x27;angle-emphasis&#x27;);
+ });
+}
+function parts(s){return s.split(/\s*=\s*/).map(x=&gt;x.trim()).filter(Boolean)}
+function buildMath(text,caption){const card=document.createElement(&#x27;div&#x27;);card.className=&#x27;math-card&#x27;;const top=document.createElement(&#x27;div&#x27;);top.className=&#x27;math-caption&#x27;;top.textContent=caption;card.append(top);const flow=document.createElement(&#x27;div&#x27;);flow.className=&#x27;math-flow&#x27;;parts(text).forEach((p,i)=&gt;{if(i){const equal=document.createElement(&#x27;span&#x27;);equal.className=&#x27;math-equals&#x27;;equal.textContent=&#x27;=&#x27;;flow.append(equal)}const part=document.createElement(&#x27;span&#x27;);part.className=&#x27;math-part&#x27;;part.textContent=p;flow.append(part)});card.append(flow);return card;}
+root.querySelectorAll(&#x27;#no-legacy-equation-mirror&#x27;).forEach(el=&gt;{const mirror=document.createElement(&#x27;div&#x27;);mirror.className=&#x27;equation-presentation&#x27;;el.after(mirror);el.classList.add(&#x27;math-sr&#x27;);let prev=null;function refresh(){const value=el.textContent.trim();if(value===prev)return;prev=value;mirror.replaceChildren(buildMath(value,&#x27;Relación matemática&#x27;));}new MutationObserver(refresh).observe(el,{childList:true,characterData:true,subtree:true});refresh();});
+let queued=false;const obs=new MutationObserver(()=&gt;{if(queued)return;queued=true;requestAnimationFrame(()=&gt;{queued=false;emphasize();});});
+root.querySelectorAll(&#x27;svg&#x27;).forEach(svg=&gt;obs.observe(svg,{childList:true,subtree:true,characterData:true}));emphasize();
+})();
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;" title="Ley de Cosenos"></iframe></section><div class="pie-navegacion"><a class="back" href="index.html">↩ Regresar al índice</a><span class="credito-autoria">Desarrollado por: Ing. Carlos R. Guffantte S., Mgs.</span></div></main><script>
+(()=>{const buttons=Array.from(document.querySelectorAll('[role=tab]'));const panels=Array.from(document.querySelectorAll('.tabPanel'));function activate(index){buttons.forEach((b,i)=>{b.setAttribute('aria-selected',String(i===index));b.tabIndex=i===index?0:-1;panels[i].hidden=i!==index});requestAnimationFrame(()=>{const f=panels[index].querySelector('iframe');f.contentWindow.postMessage({pedirAltura:true},'*')})}buttons.forEach((btn,i)=>{btn.addEventListener('click',()=>activate(i));btn.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();let n=e.key==='Home'?0:e.key==='End'?buttons.length-1:(i+(e.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;activate(n);buttons[n].focus()})});window.addEventListener('message',e=>{const iframe=Array.from(document.querySelectorAll('iframe')).find(f=>f.contentWindow===e.source);if(!iframe||!e.data||typeof e.data.laboratorioAltura!=='number')return;const h=Math.min(3200,Math.max(280,e.data.laboratorioAltura+3));iframe.style.height=h+'px'});})();
+</script></body></html>
