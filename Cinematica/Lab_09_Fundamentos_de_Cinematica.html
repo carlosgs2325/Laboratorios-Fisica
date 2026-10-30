@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Lab 09 · Fundamentos de Cinemática</title>
+<style>
+:root{--bg:#f5f7fb;--paper:#fff;--ink:#15253d;--muted:#65768c;--line:#dce5ef;--blue:#2369c9;--cyan:#0798aa;--orange:#e08c25;--green:#218468;--red:#cc5562;--radius:16px;--shadow:0 8px 26px #1b3e6710}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);line-height:1.5}header{background:linear-gradient(116deg,#112a4a,#245e98);color:white;padding:28px max(22px,calc((100% - 1200px)/2)) 24px}header .eyebrow{font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:#bee2ff;font-weight:700}h1{font-size:clamp(1.6rem,3vw,2.4rem);margin:5px 0 6px}header p{color:#dcecff;margin:0;max-width:760px}.wrap{max-width:1200px;margin:auto;padding:22px}.nav{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}.nav button{border:1px solid var(--line);background:white;border-radius:10px;padding:10px 16px;color:var(--muted);font-size:.95rem;font-weight:650;cursor:pointer}.nav button.active{background:#e4f0ff;color:#174f94;border-color:#a9c9ed}.panel{display:none}.panel.active{display:block}.grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(290px,1fr);gap:16px}.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:19px;box-shadow:var(--shadow);min-width:0}.card h2{font-size:1.12rem;margin:0 0 10px}.card h3{font-size:1rem;margin:0 0 8px}.sub{font-size:.88rem;color:var(--muted);margin:0 0 13px}.wide{grid-column:1/-1}.stack{display:grid;gap:16px}.controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.btn{border:1px solid #b9cce2;background:#fff;color:#174b83;border-radius:10px;padding:9px 13px;font-size:.92rem;font-weight:650;cursor:pointer}.btn.main{background:#2369c9;border-color:#2369c9;color:white}.btn:focus-visible,.nav button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ffcf64;outline-offset:2px}.time-row{display:flex;align-items:center;gap:13px;margin:14px 0}.time-row input{flex:1;min-width:80px}.readout{font-variant-numeric:tabular-nums;font-weight:750;white-space:nowrap}input[type=range]{accent-color:var(--blue)}.scene{width:100%;height:245px;display:block;background:#f8fbff;border:1px solid #e0e9f3;border-radius:12px}.info{font-size:.83rem;color:var(--muted);margin:11px 0 0}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field label{font-size:.83rem;color:var(--muted);font-weight:650;display:block;margin-bottom:4px}.field input,.field select{border:1px solid #c7d6e7;border-radius:9px;width:100%;padding:9px 10px;font-size:.95rem;color:var(--ink);background:white}.field input:invalid{border-color:var(--red)}.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric{background:#f4f8fe;border:1px solid #e3ebf5;border-radius:11px;padding:11px}.metric span{display:block;color:var(--muted);font-size:.78rem}.metric strong{font-size:1.12rem;white-space:nowrap;font-variant-numeric:tabular-nums}.metric small{font-weight:500;color:var(--muted)}.metric.blue{border-left:4px solid var(--blue)}.metric.orange{border-left:4px solid var(--orange)}.metric.green{border-left:4px solid var(--green)}.metric.red{border-left:4px solid var(--red)}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{font-size:.79rem;color:#47627c;background:#edf3f9;border-radius:8px;padding:4px 9px}.notice{background:#f0f7ff;border-left:4px solid #4181cc;padding:12px 14px;border-radius:8px;color:#21466e;font-size:.91rem}.formula{padding:12px;background:#f3f7fc;border-radius:9px;font-size:1.05rem;overflow-x:auto}.form-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.preset{font-size:.83rem}.graphs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.graph{width:100%;height:210px;border-radius:9px;background:#f9fbfe;border:1px solid #e5edf5}.graphbox{min-width:0}.graphbox h3{font-size:.9rem;margin:2px 0 7px}.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.concept{padding:14px;border:1px solid var(--line);border-radius:11px}.concept h3{color:#1b579b}.concept p{margin:4px 0}.foot{font-size:.85rem;color:var(--muted);padding:20px 4px;text-align:center}.check{display:flex;gap:7px;align-items:center;font-size:.88rem;color:var(--ink)}.check input{accent-color:var(--blue)}.status{min-height:21px;color:#b14848;font-size:.84rem}.bubble{background:#f4f8ff;padding:14px;border-radius:11px;margin-top:14px}.bubble b{color:#205caa}@media(max-width:850px){.grid{grid-template-columns:1fr}.graphs{grid-template-columns:1fr}.graph{height:190px}.two{grid-template-columns:1fr}}@media(max-width:480px){.wrap{padding:12px}.card{padding:13px}.metrics{grid-template-columns:1fr 1fr}.metric strong{font-size:.99rem}.fields{gap:8px}header{padding:22px 15px}}
+
+/* v2: la escena y todas las variables importantes comparten la primera fila */
+header{padding-top:14px;padding-bottom:13px}header h1{font-size:1.65rem;margin:2px 0 2px}header p{font-size:.87rem;max-width:1000px}
+.wrap{padding-top:12px}.nav{margin-bottom:10px}.nav button{padding:8px 14px}
+.dashboard{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(355px,1fr);gap:12px;align-items:stretch}
+.dashboard>.card{padding:13px 15px}.dashboard .card h2{margin-bottom:5px;font-size:1.03rem}
+.dashboard .sub{font-size:.79rem;line-height:1.35;margin-bottom:8px}
+.scene{height:174px}.time-row{margin:7px 0;gap:9px}.controls{gap:6px}.controls .btn{padding:7px 9px;font-size:.81rem}
+.dashboard .metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.dashboard .metric{padding:7px 9px}.dashboard .metric span{font-size:.72rem;line-height:1.2;min-height:17px}
+.dashboard .metric strong{font-size:1rem}.dashboard .info{font-size:.75rem;margin-top:6px}
+.dashboard .form-row{margin-top:7px}.dashboard .check{font-size:.78rem}
+.live-graphs{margin-top:12px;padding:13px 15px}.live-graphs h2{font-size:1rem;margin-bottom:4px}
+.live-graphs .graph{height:148px}.live-graphs .graphbox h3{font-size:.81rem;margin:0 0 4px}
+.live-graphs .sub{font-size:.78rem;margin-bottom:7px}.live-graphs .notice{font-size:.8rem;margin-top:7px;padding:8px 10px}
+.setup-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:12px;align-items:start;margin-top:12px}
+.setup-grid .card{padding:15px}.setup-grid .card:last-child{grid-column:1/-1}
+@media(max-width:920px){.dashboard{grid-template-columns:1fr}.dashboard .metrics{grid-template-columns:repeat(4,minmax(0,1fr))}.setup-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.dashboard .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.setup-grid{grid-template-columns:1fr}.setup-grid .card:last-child{grid-column:auto}.live-graphs .graphs{grid-template-columns:1fr}.live-graphs .graph{height:175px}}
+
+/* v12 — ocho indicadores en parejas conceptuales. */
+.dashboard .metric.neutral{border-left:3px solid #819cb8;}
+.dashboard .metric.neutral strong{color:#f2f8ff;}
+</style>
+<style>
+#graficas .live-graphs{margin-top:0;padding:19px}#graficas .graphs{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}#graficas .graph{height:245px}#graficas .graphbox h3{font-size:.95rem}#graficas .sub{font-size:.88rem}#graficas .notice{font-size:.91rem;padding:12px 14px}@media(max-width:850px){#graficas .graphs{grid-template-columns:1fr}#graficas .graph{height:210px}}
+
+/* Tabla de tramos sin codificación cromática ni resaltado activo */
+.segment-table{min-width:590px;font-size:.90rem}
+.segment-table th,.segment-table td{text-align:center;padding:13px 12px}
+.segment-table th:first-child,.segment-table td:first-child{text-align:left;width:28%;font-weight:650}
+.segment-table tbody tr:last-child{font-weight:inherit;background:transparent}
+.segment-table tbody tr:nth-child(even){background:#f8fbff}
+
+.segment-table .total-col{background:#edf4fc;font-weight:700}
+.segment-table tbody tr:nth-child(even) .total-col{background:#e6f0fb}
+</style><style>
+/* v4: edición y casos guiados debajo de la simulación; resumen analítico en Gráficas */
+.setup-grid{grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr)}
+.setup-grid .card:last-child{grid-column:auto}
+.segment-analysis{margin-top:15px}
+.segment-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.segment-table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:660px;font-variant-numeric:tabular-nums}
+.segment-table th{background:#eaf2fd;color:#244967;text-align:right;font-size:.76rem;padding:12px 10px;white-space:nowrap}
+.segment-table th:first-child,.segment-table td:first-child{text-align:left}
+.segment-table td{padding:12px 10px;text-align:right;border-top:1px solid #e4ebf4;white-space:nowrap}
+.segment-table tbody tr:nth-child(even){background:#f8fbff}
+
+.segment-table tbody tr:last-child{font-weight:normal;background:transparent}
+
+.segment-note{margin-top:10px;color:var(--muted);font-size:.82rem}
+@media(max-width:920px){.setup-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.setup-grid{grid-template-columns:1fr}}
+</style><style id="identidad-visual-fisica-v9">
+/* v9 — Identidad visual de los laboratorios de Trigonometría y Vectores.
+   Se preservan el marcado, la disposición, las magnitudes y el motor de simulación. */
+:root{
+ --bg:#081120;--paper:#11243a;--ink:#e8f1ff;--muted:#a9c2da;
+ --line:#2b455f;--shadow:0 14px 35px #0003;
+ /* Colores de magnitudes conservados de la v8 */
+ --blue:#2369c9;--cyan:#0798aa;--orange:#e08c25;--green:#218468;--red:#cc5562;
+}
+html{background:#081120}
+body{background:radial-gradient(circle at 85% 3%,#143456 0,transparent 36%),#081120;color:var(--ink)}
+header{background:transparent;border-bottom:1px solid #294460;color:#f0f7ff;padding-top:20px;padding-bottom:16px}
+header .eyebrow{color:#79dfe8;letter-spacing:2px;font-size:11px;font-weight:800}
+header h1{color:#f0f7ff;letter-spacing:-.5px}
+header p{color:#abc4d9}
+.nav{background:#10233b;border:1px solid #2a4663;border-radius:15px;padding:9px;gap:10px}
+.nav button{background:#1b314c;border:1px solid #345372;color:#c9dfef;border-radius:10px;font-weight:750}
+.nav button:hover{background:#254560}
+.nav button.active{background:#176c7a;border-color:#59d7eb;color:#fff}
+.card{background:linear-gradient(145deg,#11263e,#0d1b2e);border:1px solid #2a425d;border-radius:18px;box-shadow:0 14px 35px #0002}
+.card h2,.card h3{color:#edf5ff}
+.sub,.info,.segment-note{color:#acc3d9}
+.btn{background:#1b354f;border:1px solid #3a5976;color:#d7eeff;border-radius:10px;font-weight:750}
+.btn:hover{background:#254966}
+.btn.main{background:#22618b;border-color:#57b7f2;color:#fff}
+.btn.main:hover{background:#2877a4}
+.btn:focus-visible,.nav button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #81dce9;outline-offset:2px}
+.field label,.check,.time-row label{color:#c2d5e8}
+.field input,.field select,select{background:#091a2d;color:#f1f7ff;border:1px solid #40627f;border-radius:9px}
+.field input:invalid{border-color:#d77078}
+input[type=range],.check input{accent-color:#56d6e8}
+.readout{color:#9feefa}
+.metric{background:#162d46;border:1px solid #304962;border-radius:12px}
+.metric.blue{border-left:4px solid var(--blue)}
+.metric.orange{border-left:4px solid var(--orange)}
+.metric.green{border-left:4px solid var(--green)}
+.metric.red{border-left:4px solid var(--red)}
+.metric span,.metric small{color:#a7c0d9}
+.metric strong{color:#f3f8ff}
+.chip{background:#1c314a;color:#b8d3e8;border:1px solid #355370}
+.notice{background:#0d2135;color:#dbeafa;border:1px solid #2a4c65;border-left:4px solid #56d9e7}
+.formula{background:#0d2135;color:#dff8ff;border:1px solid #2a4c65;border-radius:12px}
+.concept{background:#10243a;border:1px solid #2a4c65;border-radius:12px}
+.concept h3{color:#92ecfa}
+.bubble{background:#0d2135;border:1px solid #2a4c65;color:#dbeafa}
+.bubble b{color:#92ecfa}
+.status{color:#ffc1be}
+.foot{color:#9fbbd5}
+/* Tablas: colores neutros, sin resaltados de tramos ni de la velocidad. */
+.segment-table-wrap{border:1px solid #304b66;background:#0d1b2e}
+.segment-table th{background:#1b354f;color:#d8eeff;border-bottom:1px solid #36536f}
+.segment-table td{color:#e2effb;border-top:1px solid #29415b}
+.segment-table tbody tr:nth-child(even){background:#132a42}
+.segment-table tbody tr:nth-child(odd){background:#0e2135}
+.segment-table tbody tr:last-child{font-weight:normal}
+.segment-table .total-col{background:#1c354a;font-weight:700}
+.segment-table tbody tr:nth-child(even) .total-col{background:#203d53}
+/* Los lienzos se dejan claros: el dibujo interno ya tiene colores didácticos.
+   Así se preserva el contraste y se evita reprogramar las visualizaciones. */
+.scene{border-color:#3b5b77}
+.graph{border-color:#3b5b77}
+</style><style id="ajustes-didacticos-v10">
+/* Mantener la disposición original: solo entrada de datos a todo el ancho. */
+#simulador .setup-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+#simulador .setup-grid>.card{grid-column:1/-1}
+#simulador .setup-grid .fields{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+#simulador .input-band{min-width:0}
+#simulador .input-band-title{font-size:11px;letter-spacing:1.35px;font-weight:850;color:#79dcea;margin-bottom:8px}
+#simulador .input-band-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:end}
+#simulador .input-band.times .input-band-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+#simulador .input-band .field{min-width:0}
+#simulador .input-band .field input{min-width:0;font-variant-numeric:tabular-nums}
+@media(max-width:700px){#simulador .input-band-grid,#simulador .input-band.times .input-band-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){#simulador .input-band-grid,#simulador .input-band.times .input-band-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* v11 — configuración y recorridos en la misma línea, sin alterar el simulador. */
+@media(min-width:1061px){
+ #simulador .setup-grid{grid-template-columns:minmax(0,1.9fr) minmax(305px,.85fr);align-items:stretch;gap:12px}
+ #simulador .setup-grid>.card{grid-column:auto;min-width:0}
+ #simulador .setup-grid .fields{gap:12px}
+ #simulador .input-band-grid{gap:8px}
+ #simulador .input-band .field input{width:100%;max-width:122px;padding:8px 7px}
+ #simulador .input-band .field label{font-size:.76rem;line-height:1.3;min-height:2.45em}
+ #simulador .setup-grid .card:last-child .form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:8px}
+ #simulador .setup-grid .card:last-child .form-row .btn{white-space:normal;line-height:1.3;min-height:48px}
+}
+@media(min-width:1061px) and (max-width:1220px){
+ #simulador .setup-grid{grid-template-columns:minmax(0,1.75fr) minmax(270px,.8fr)}
+ #simulador .input-band .field label{font-size:.71rem}
+ #simulador .input-band .field input{font-size:.81rem}
+}
+@media(max-width:1060px){
+ #simulador .setup-grid{grid-template-columns:minmax(0,1fr)}
+ #simulador .setup-grid>.card{grid-column:1/-1}
+ #simulador .input-band .field input{width:100%;max-width:145px}
+}
+</style></head>
+<body>
+<header><div class="eyebrow">Física · Unidad 3 · Laboratorio 09</div><h1>Fundamentos de Cinemática</h1><p>Explora cómo cambian la posición, el desplazamiento y la distancia recorrida. Relaciona el movimiento con el tiempo, la rapidez y la velocidad.</p></header>
+<main class="wrap">
+<nav aria-label="Secciones del laboratorio" class="nav"><button class="active" data-tab="simulador">Simulador</button><button data-tab="graficas">Gráficas</button><button data-tab="conceptos">Conceptos y definiciones</button></nav>
+<section class="panel" id="conceptos"><div class="grid"><article class="card"><h2>¿Qué estudia la Cinemática?</h2><p>Describe cómo se mueven los cuerpos en función del tiempo, sin estudiar las fuerzas que causan el movimiento. Una <strong>partícula</strong> es un modelo en el que las dimensiones del cuerpo no son relevantes para describir su trayectoria; un <strong>sólido rígido</strong> es un modelo que mantiene constantes las distancias entre sus puntos.</p><div class="two"><div class="concept"><h3>Posición</h3><p>Indica dónde está el móvil respecto del origen del eje horizontal. Una coordenada negativa no significa distancia negativa.</p><div class="formula">x(t) [m]</div></div><div class="concept"><h3>Desplazamiento</h3><p>Es el cambio neto de posición entre dos instantes: depende solo de la posición inicial y final, aunque el móvil haya regresado durante el recorrido.</p><div class="formula">Δx = x<sub>f</sub> − x<sub>i</sub></div></div><div class="concept"><h3>Distancia recorrida</h3><p>Suma las longitudes de los tramos efectivamente recorridos. Puede aumentar incluso cuando el móvil se acerca al punto de partida.</p><div class="formula">d = Σ |Δx<sub>tramo</sub>|</div></div><div class="concept"><h3>Velocidad y rapidez medias</h3><p>Ambas consideran el tiempo transcurrido: la velocidad media utiliza el desplazamiento con signo y la rapidez media utiliza toda la distancia recorrida. Al inicio (t = 0) ninguna está definida.</p><div class="formula">v̄ = Δx/Δt<br/>r̄ = d/Δt</div></div><div class="concept"><h3>Velocidad y rapidez instantáneas</h3><p>En cada tramo, la velocidad conserva su signo y la rapidez indica su valor absoluto. En los cambios instantáneos de tramo, el valor de la velocidad puede saltar.</p><div class="equation">rapidez = |v|</div></div><div class="concept"><h3>Aceleración en este modelo</h3><p>Cada tramo se representa con velocidad constante. Los cambios instantáneos de velocidad entre tramos son idealizaciones, no intervalos con aceleración calculable mediante este laboratorio.</p></div></div></article><aside class="stack"><div class="card"><h2>Sistema de referencia</h2><p>Para describir el movimiento se elige un origen, la dirección del eje y un sentido positivo. Las posiciones a la derecha del origen son positivas y las posiciones al lado contrario son negativas.</p><p class="notice">El signo de la posición o de la velocidad indica una dirección; no dice por sí solo si el móvil recorre más distancia o se mueve más rápido.</p></div><div class="card"><h2>Cómo interpretar los tres tramos</h2><p>En cada tramo el móvil mantiene una velocidad constante. Compara las posiciones inicial y final y el tiempo transcurrido para decidir si avanzó, regresó o permaneció inmóvil.</p><div class="formula">v = Δx/Δt</div><p>Si las dos posiciones coinciden, en ese tramo no recorre distancia. Si cambia el sentido entre tramos, el recorrido total puede ser mayor que el desplazamiento neto.</p></div><div class="card"><h2>Lectura de las gráficas</h2><p>En <strong>posición–tiempo</strong>, una línea que sube indica velocidad positiva, una que baja indica velocidad negativa y una horizontal indica reposo.</p><p>En <strong>velocidad–tiempo</strong>, cada tramo aparece horizontal porque su velocidad es constante. En <strong>distancia–tiempo</strong>, la distancia nunca disminuye, aunque el móvil regrese hacia el origen.</p></div></aside></div></section>
+<section class="panel active" id="simulador"><div class="dashboard"><article class="card"><h2>Movimiento en una dimensión</h2><p class="sub">El móvil recorre tres tramos rectilíneos sucesivos. En cada tramo se mueve con velocidad constante; al pasar de un tramo a otro, puede cambiar instantáneamente su velocidad (idealización didáctica).</p><canvas aria-label="Representación del móvil desplazándose sobre un eje horizontal" class="scene" id="scene"></canvas><div class="time-row"><label for="seek">Tiempo</label><input id="seek" max="12" min="0" step="0.01" type="range" value="0"/><output class="readout" id="timeLabel">0.0000 s</output></div><div class="controls"><button class="btn main" id="play">▶ Reproducir</button><button class="btn" id="stepBack">◀ 0.25 s</button><button class="btn" id="stepForward">0.25 s ▶</button><button class="btn" id="reset">↺ Reiniciar</button><label class="field" style="display:flex;gap:8px;align-items:center"><span style="white-space:nowrap">Reproducción</span><select aria-label="Velocidad de reproducción" id="speed" style="width:auto"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option selected="" value="1">1×</option><option value="2">2×</option></select></label></div><div class="form-row"><label class="check"><input checked="" id="trail" type="checkbox"/> Mostrar trayectoria</label><label class="check"><input checked="" id="vectors" type="checkbox"/> Mostrar vectores</label></div><p class="info">Azul: desplazamiento neto desde el inicio. Naranja: recorrido realizado (marcas por tramo). La flecha del móvil indica el sentido de su velocidad.</p></article><article class="card"><h2>Variables en tiempo real</h2><div class="metrics"><div class="metric blue"><span>Posición actual</span><strong id="posVal">0.0000 <small>m</small></strong></div><div class="metric neutral"><span>Tiempo transcurrido</span><strong id="elapsedVal">0.0000 <small>s</small></strong></div><div class="metric blue"><span>Desplazamiento Δx</span><strong id="dxVal">0.0000 <small>m</small></strong></div><div class="metric orange"><span>Distancia recorrida</span><strong id="distVal">0.0000 <small>m</small></strong></div><div class="metric green"><span>Velocidad instantánea</span><strong id="velVal">0.0000 <small>m/s</small></strong></div><div class="metric green"><span>Rapidez instantánea</span><strong id="rapVal">0.0000 <small>m/s</small></strong></div><div class="metric blue"><span>Velocidad media (desde t=0)</span><strong id="vmedVal">— <small>m/s</small></strong></div><div class="metric orange"><span>Rapidez media (desde t=0)</span><strong id="rmedVal">— <small>m/s</small></strong></div></div><p class="info">En t = 0, las magnitudes medias no están definidas porque todavía no ha transcurrido tiempo.</p></article></div><div class="setup-grid"><article class="card"><h2>Configurar la trayectoria</h2><p class="sub">Modifica las posiciones sucesivas y la duración de cada tramo. Los valores se expresan en metros y segundos.</p><div class="fields"><div class="input-band positions"><div class="input-band-title">POSICIONES DE PASO</div><div class="input-band-grid"><div class="field"><label for="x0">Punto inicial x₀ (m)</label><input id="x0" step="1" type="number" value="-20"/></div><div class="field"><label for="x1">Punto 1 x₁ (m)</label><input id="x1" step="1" type="number" value="30"/></div><div class="field"><label for="x2">Punto 2 x₂ (m)</label><input id="x2" step="1" type="number" value="-5"/></div><div class="field"><label for="x3">Punto final x₃ (m)</label><input id="x3" step="1" type="number" value="15"/></div></div></div><div class="input-band times"><div class="input-band-title">DURACIONES POR TRAMO</div><div class="input-band-grid"><div class="field"><label for="t1">Tiempo tramo 1 (s)</label><input id="t1" min="0.1" step="0.5" type="number" value="4"/></div><div class="field"><label for="t2">Tiempo tramo 2 (s)</label><input id="t2" min="0.1" step="0.5" type="number" value="4"/></div><div class="field"><label for="t3">Tiempo tramo 3 (s)</label><input id="t3" min="0.1" step="0.5" type="number" value="4"/></div></div></div></div><p class="status" id="error" role="status"></p><div class="form-row"><button class="btn main" id="apply">Aplicar cambios</button><button class="btn" id="defaults">Restaurar valores</button></div></article><article class="card"><h2>Recorridos para observar</h2><div class="form-row"><button class="btn preset" data-preset="forward">Solo avanza</button><button class="btn preset" data-preset="return">Avanza y regresa al inicio</button><button class="btn preset" data-preset="pause">Avanza, se detiene y continúa</button><button class="btn preset" data-preset="reverse">Cambia de sentido</button></div><div class="bubble" id="insight"><b>Observa:</b> cuando el móvil invierte su sentido, la distancia continúa aumentando, pero el desplazamiento puede disminuir.</div></article></div></section><section class="panel" id="graficas"><article class="card live-graphs"><h2>Gráficas simultáneas</h2><p class="sub">La línea vertical indica el instante actual. Las tres gráficas usan el mismo reloj que la animación de la pista.</p><div class="graphs"><div class="graphbox"><h3>Posición x (m) frente a tiempo t (s)</h3><canvas class="graph" id="gx"></canvas></div><div class="graphbox"><h3>Velocidad v (m/s) frente a tiempo t (s)</h3><canvas class="graph" id="gv"></canvas></div><div class="graphbox"><h3>Distancia acumulada d (m) frente a tiempo t (s)</h3><canvas class="graph" id="gd"></canvas></div></div><div class="time-row"><label for="graphSeek">Instante</label><input id="graphSeek" max="12" min="0" step="0.01" type="range" value="0"/><output class="readout" id="graphTime">0.0000 s</output></div></article><article class="card segment-analysis"><h2>Análisis de los tramos del recorrido</h2><p class="sub">Cada tramo representa un intervalo con velocidad constante. Compara la posición inicial y final, el desplazamiento, la distancia y la velocidad para reconocer cambios de sentido y detenciones.</p><div id="segments"></div></article></section>
+<footer class="foot">Laboratorio 09 · Unidad 3: Cinemática de una partícula · Recurso didáctico interactivo · Funciona sin conexión a internet</footer>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id), tabs=[...document.querySelectorAll('[data-tab]')], fmt=n=>Number.isFinite(n)?n.toFixed(4):'—';
+let config={xs:[-20,30,-5,15],ts:[4,4,4]},t=0,playing=false,lastFrame=null,raf=null;
+const maxT=()=>config.ts.reduce((a,b)=>a+b,0);
+function switchTab(id){tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===id));if(id==='simulador')drawScene();if(id==='graficas')drawAll();}
+tabs.forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+function snapshot(time){let tm=Math.min(maxT(),Math.max(0,time)),elapsed=0,dist=0,idx=0,x=config.xs[0],v=0;for(let i=0;i<3;i++){let dt=config.ts[i],delta=config.xs[i+1]-config.xs[i];if(tm>=elapsed+dt-1e-9){dist+=Math.abs(delta);x=config.xs[i+1];elapsed+=dt;idx=i;v=delta/dt;}else{let part=Math.max(0,tm-elapsed)/dt;x=config.xs[i]+delta*part;dist+=Math.abs(delta)*part;idx=i;v=delta/dt;break;}}if(tm>=maxT()-1e-8){v=(config.xs[3]-config.xs[2])/config.ts[2];idx=2;}return{x,v,dist,dx:x-config.xs[0],idx,tm};}
+function setTime(q){t=Math.max(0,Math.min(maxT(),q));$('seek').value=t;$('graphSeek').value=t;$('timeLabel').textContent=fmt(t)+' s';$('elapsedVal').innerHTML=fmt(t)+' <small>s</small>';$('graphTime').textContent=fmt(t)+' s';const s=snapshot(t);const put=(id,n,unit)=>$(id).innerHTML=fmt(n)+' <small>'+unit+'</small>';$('posVal').innerHTML=fmt(s.x)+' <small>m</small>';put('dxVal',s.dx,'m');put('distVal',s.dist,'m');put('velVal',s.v,'m/s');put('rapVal',Math.abs(s.v),'m/s');$('vmedVal').innerHTML=(t>1e-9?fmt(s.dx/t):'—')+' <small>m/s</small>';$('rmedVal').innerHTML=(t>1e-9?fmt(s.dist/t):'—')+' <small>m/s</small>';drawScene();if($('graficas').classList.contains('active'))drawAll();}
+function stop(){playing=false;lastFrame=null;$('play').textContent='▶ Reproducir';if(raf!==null)cancelAnimationFrame(raf);raf=null;}
+function tick(ms){if(!playing)return;if(lastFrame!==null){let dt=Math.min((ms-lastFrame)/1000,.10)*Number($('speed').value);setTime(t+dt);if(t>=maxT()-1e-8){stop();return;}}lastFrame=ms;raf=requestAnimationFrame(tick);}
+$('play').onclick=()=>{if(playing){stop();return;}if(t>=maxT())setTime(0);playing=true;$('play').textContent='⏸ Pausar';lastFrame=null;raf=requestAnimationFrame(tick)};$('reset').onclick=()=>{stop();setTime(0)};$('stepBack').onclick=()=>{stop();setTime(t-.25)};$('stepForward').onclick=()=>{stop();setTime(t+.25)};for(const id of ['seek','graphSeek'])$(id).addEventListener('input',e=>{stop();setTime(Number(e.target.value));});for(const id of ['trail','vectors'])$(id).addEventListener('change',drawScene);
+function updateForm(){['x0','x1','x2','x3'].forEach((k,i)=>$(k).value=config.xs[i]);['t1','t2','t3'].forEach((k,i)=>$(k).value=config.ts[i]);}
+function apply(){const xs=['x0','x1','x2','x3'].map(k=>Number($(k).value)),ts=['t1','t2','t3'].map(k=>Number($(k).value));let inputs=['x0','x1','x2','x3','t1','t2','t3'];if(inputs.some(k=>$(k).value.trim()==='')||![...xs,...ts].every(Number.isFinite)||ts.some(q=>q<=0)||ts.reduce((a,b)=>a+b,0)>3600||xs.some(q=>Math.abs(q)>1e6)){$('error').textContent='Introduce posiciones válidas (hasta ±1 000 000 m) y duraciones positivas. El total debe ser ≤ 3600 s.';return;}$('error').textContent='';stop();config={xs,ts};const end=maxT();for(const k of ['seek','graphSeek']){$(k).max=end;$(k).step=Math.min(.01,end/1000)}setTime(0);summarize();if($('graficas').classList.contains('active'))drawAll();}
+$('apply').onclick=apply;$('defaults').onclick=()=>{config={xs:[-20,30,-5,15],ts:[4,4,4]};updateForm();apply()};const presets={forward:{xs:[-20,0,20,40],ts:[3,3,3]},return:{xs:[0,30,15,0],ts:[3,3,3]},pause:{xs:[-30,0,0,30],ts:[3,3,3]},reverse:{xs:[-20,35,-10,20],ts:[4,4,4]}};document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>{config=structuredClone(presets[b.dataset.preset]);updateForm();apply();switchTab('simulador')});
+function summarize(){
+ const rows=[
+  ['Duración (s)',(i,start,dt)=>fmt(dt),()=>fmt(config.ts.reduce((a,b)=>a+b,0))],
+  ['Posición inicial (m)',(i)=>fmt(config.xs[i]),()=>fmt(config.xs[0])],
+  ['Posición final (m)',(i)=>fmt(config.xs[i+1]),()=>fmt(config.xs[3])],
+  ['Desplazamiento Δx (m)',(i)=>fmt(config.xs[i+1]-config.xs[i]),()=>fmt(config.xs[3]-config.xs[0])],
+  ['Distancia recorrida (m)',(i)=>fmt(Math.abs(config.xs[i+1]-config.xs[i])),()=>fmt(config.xs.slice(1).reduce((sum,x,i)=>sum+Math.abs(x-config.xs[i]),0))],
+  ['Velocidad (m/s)',(i,start,dt)=>fmt((config.xs[i+1]-config.xs[i])/dt),null]
+ ];
+ const starts=[0,config.ts[0],config.ts[0]+config.ts[1]];
+ let h='<div class="segment-table-wrap"><table class="segment-table"><thead><tr><th scope="col">Magnitud</th>';
+ for(let i=0;i<3;i++)h+=`<th scope="col">Tramo ${i+1}</th>`;
+ h+='<th scope="col" class="total-col">Resumen global</th></tr></thead><tbody>';
+ for(const [label,calc,total] of rows){
+  h+=`<tr><th scope="row">${label}</th>`;
+  for(let i=0;i<3;i++)h+=`<td>${calc(i,starts[i],config.ts[i])}</td>`;
+  h+=`<td class="total-col">${total?total():'—'}</td></tr>`;
+ }
+ h+='</tbody></table></div><p class="segment-note">Δx conserva su signo; la distancia es siempre no negativa. La velocidad de todo el recorrido no se presenta como una velocidad constante.</p>';
+ $('segments').innerHTML=h;
+
+}
+
+function canvasSetup(canvas){let rect=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1,w=Math.max(1,rect.width),h=Math.max(1,rect.height);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr)}let ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);return{ctx,w,h};}
+function arrow(ctx,x1,y1,x2,y2,color,width=3){let a=Math.atan2(y2-y1,x2-x1);ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.beginPath();ctx.moveTo(x2,y2);ctx.lineTo(x2-9*Math.cos(a-.5),y2-9*Math.sin(a-.5));ctx.lineTo(x2-9*Math.cos(a+.5),y2-9*Math.sin(a+.5));ctx.closePath();ctx.fill();}
+function drawScene(){let {ctx:c,w,h}=canvasSetup($('scene'));let s=snapshot(t);let min=Math.min(...config.xs,0),max=Math.max(...config.xs,0),margin=Math.max(8,(max-min)*.12);min-=margin;max+=margin;let px=x=>35+(x-min)/(max-min)*(w-70);let y=h*.57;c.strokeStyle='#9aacbf';c.lineWidth=2;c.beginPath();c.moveTo(25,y);c.lineTo(w-22,y);c.stroke();let step=Math.pow(10,Math.floor(Math.log10((max-min)/7)));for(const mult of [1,2,5,10]){if((max-min)/(step*mult)<=11){step*=mult;break;}}c.font='11px system-ui';c.textAlign='center';for(let v=Math.ceil(min/step)*step;v<=max;v+=step){if(px(v)<26||px(v)>w-23)continue;c.strokeStyle='#b2c3d5';c.beginPath();c.moveTo(px(v),y-6);c.lineTo(px(v),y+6);c.stroke();c.fillStyle='#65768c';c.fillText(Number(v.toFixed(7)).toString(),px(v),y+22);}let xo=px(0);c.strokeStyle='#5c7896';c.setLineDash([3,4]);c.beginPath();c.moveTo(xo,29);c.lineTo(xo,y+32);c.stroke();c.setLineDash([]);c.fillStyle='#405e7a';c.fillText('Origen (0)',xo,20);
+if($('trail').checked){let elapsed=0;c.lineWidth=6;c.lineCap='round';for(let i=0;i<3;i++){const frac=Math.max(0,Math.min(1,(t-elapsed)/config.ts[i]));if(frac>0){c.strokeStyle=['#e4a044','#f0bd70','#c67c1b'][i];c.beginPath();c.moveTo(px(config.xs[i]),y+47+i*12);c.lineTo(px(config.xs[i]+(config.xs[i+1]-config.xs[i])*frac),y+47+i*12);c.stroke();}elapsed+=config.ts[i];}c.lineCap='butt';}
+if($('vectors').checked&&Math.abs(s.dx)>1e-7){arrow(c,px(config.xs[0]),y-23,px(s.x),y-23,'#2369c9',3);}
+
+let x=px(s.x);c.fillStyle='#2369c9';c.beginPath();c.arc(x,y,11,0,2*Math.PI);c.fill();c.strokeStyle='#fff';c.lineWidth=3;c.stroke();c.fillStyle='#174f98';c.font='bold 12px system-ui';c.fillText('A',x,y-17);if($('vectors').checked&&Math.abs(s.v)>1e-8){let len=33*Math.sign(s.v);arrow(c,x,y-49,x+len,y-49,'#218468',3);c.font='11px system-ui';c.fillStyle='#218468';c.fillText('v',x+len/2,y-58);}c.fillStyle='#42586e';c.textAlign='left';c.font='12px system-ui';c.fillText('Azul: Δx · Naranja: distancia por tramos · Verde: v',16,h-17);}
+function graphDraw(id,kind){let {ctx:c,w,h}=canvasSetup($(id)),l=47,r=w-13,top=16,bottom=h-34,span=maxT();let values=kind==='x'?config.xs:kind==='d'?[0,Math.abs(config.xs[1]-config.xs[0]),Math.abs(config.xs[1]-config.xs[0])+Math.abs(config.xs[2]-config.xs[1]),config.xs.slice(1).reduce((z,a,i)=>z+Math.abs(a-config.xs[i]),0)]:config.ts.map((dt,i)=>(config.xs[i+1]-config.xs[i])/dt);if(kind==='v')values=[...values,0];let lo=Math.min(0,...values),hi=Math.max(0,...values);if(hi-lo<1e-8){hi+=1;lo-=1;}let pad=(hi-lo)*.14;hi+=pad;lo-=pad;let xx=v=>l+(r-l)*v/span,yy=v=>bottom-(v-lo)/(hi-lo)*(bottom-top);c.font='10px system-ui';c.textAlign='right';for(let i=0;i<=4;i++){let v=lo+(hi-lo)*i/4,Y=yy(v);c.strokeStyle='#e4eaf2';c.lineWidth=1;c.beginPath();c.moveTo(l,Y);c.lineTo(r,Y);c.stroke();c.fillStyle='#68788b';c.fillText(v.toFixed(Math.abs(v)<10?1:0),l-6,Y+3);}c.strokeStyle='#9aadc2';c.beginPath();c.moveTo(l,top);c.lineTo(l,bottom);c.lineTo(r,bottom);c.stroke();c.textAlign='center';for(let i=0;i<=4;i++){let time=span*i/4;c.fillStyle='#68788b';c.fillText(time.toFixed(span<20?1:0),xx(time),bottom+15);}c.fillText('t (s)',(l+r)/2,h-4);let times=[0];config.ts.forEach(dt=>times.push(times.at(-1)+dt));c.strokeStyle=kind==='x'?'#2369c9':kind==='v'?'#218468':'#de8b22';c.lineWidth=2.5;c.beginPath();if(kind==='v'){for(let i=0;i<3;i++){const v=values[i];if(i===0)c.moveTo(xx(times[i]),yy(v));else c.moveTo(xx(times[i]),yy(v));c.lineTo(xx(times[i+1]),yy(v));} }else{values.forEach((v,i)=>i===0?c.moveTo(xx(times[i]),yy(v)):c.lineTo(xx(times[i]),yy(v)));}c.stroke();c.strokeStyle='#e0922c';c.lineWidth=1.5;c.setLineDash([5,3]);c.beginPath();c.moveTo(xx(t),top);c.lineTo(xx(t),bottom);c.stroke();c.setLineDash([]);let val=kind==='x'?snapshot(t).x:kind==='d'?snapshot(t).dist:snapshot(t).v;c.fillStyle='#e0922c';c.beginPath();c.arc(xx(t),yy(val),4,0,Math.PI*2);c.fill();}
+function drawAll(){graphDraw('gx','x');graphDraw('gv','v');graphDraw('gd','d')}
+window.addEventListener('resize',()=>{if($('simulador').classList.contains('active'))drawScene();if($('graficas').classList.contains('active'))drawAll()});document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()});updateForm();summarize();setTime(0);
+</script>
+</body></html>
